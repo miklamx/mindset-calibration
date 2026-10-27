@@ -1,3 +1,12 @@
+Here is the complete, single-file HTML code with the two new detailed examples embedded into the **Morning Calibration** quick guide.
+
+To keep the UI clean and compact, the examples are placed inside an **internal scrollable box** (`max-h-60 overflow-y-auto`) with a smooth custom scrollbar.
+
+### Updated `index.html` Code
+
+Replace everything in your repository's `index.html` file with this version:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +20,11 @@
     .tab-content { display: none; }
     .tab-content.active { display: block; }
     .nav-btn.active { border-bottom: 2px solid #2563eb; color: #2563eb; font-weight: 600; }
+    /* Custom thin scrollbar for help callout boxes */
+    .scroll-box::-webkit-scrollbar { width: 6px; }
+    .scroll-box::-webkit-scrollbar-track { background: #eff6ff; border-radius: 4px; }
+    .scroll-box::-webkit-scrollbar-thumb { background: #93c5fd; border-radius: 4px; }
+    .scroll-box::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
@@ -50,12 +64,36 @@
     <div id="tab-calibration" class="tab-content active space-y-6">
       <details class="bg-blue-50 border border-blue-200 rounded-xl p-4 text-xs text-blue-900 cursor-pointer">
         <summary class="font-bold flex justify-between items-center">
-          <span>💡 Quick Guide: How to use Morning Calibration</span>
+          <span>💡 Quick Guide: Real-World Application Examples</span>
           <span class="text-blue-600 font-normal">Click to expand / collapse</span>
         </summary>
-        <div class="mt-3 space-y-2 leading-relaxed border-t border-blue-200 pt-3">
-          <p><strong>Goal:</strong> Establish intentional mental focus before reacting to emails, news, or external messages.</p>
-          <p><strong>Example:</strong> Run the 5-minute timer, check off protocol steps, enter your primary task (e.g., <em>"Complete client proposal outline"</em>), and state the generated command directive aloud.</p>
+        <div class="mt-3 border-t border-blue-200 pt-3">
+          <!-- Scrollable Box Container -->
+          <div class="scroll-box max-h-64 overflow-y-auto pr-2 space-y-4 leading-relaxed">
+            
+            <!-- Example 1 -->
+            <div class="bg-white p-3 rounded-lg border border-blue-100 space-y-2">
+              <span class="font-bold text-blue-700 uppercase tracking-wider text-[10px]">Example 1: Complex Project Estimating & Bidding (Professional)</span>
+              <p><strong>Scenario:</strong> Preparing a large-scale project estimate or managing a tight deadline for a commercial supplier project under pressure.</p>
+              <ul class="list-disc list-inside space-y-1 text-slate-700">
+                <li><strong>1. Recalibration:</strong> Spend 60s in quiet focus before opening estimation software: <em>"Thank you, thank you, thank you for the clarity, focus, and capability to execute this accurately today."</em></li>
+                <li><strong>2. Command Directive:</strong> Reframe from passive anxiety: <em>"Show me and tell me the exact scope gaps and line items that require immediate attention on this bid today."</em></li>
+                <li><strong>3. Energy Conduit:</strong> Reframe execution stance: <em>"I am a structured channel through which accurate data and efficient solutions flow to the project."</em></li>
+              </ul>
+            </div>
+
+            <!-- Example 2 -->
+            <div class="bg-white p-3 rounded-lg border border-blue-100 space-y-2">
+              <span class="font-bold text-indigo-700 uppercase tracking-wider text-[10px]">Example 2: Elders Quorum / Relief Society Event (Community & Service)</span>
+              <p><strong>Scenario:</strong> Planning a Saturday morning neighborhood service project, ward dinner, or workshop where logistics and attendance feel overwhelming.</p>
+              <ul class="list-disc list-inside space-y-1 text-slate-700">
+                <li><strong>1. Recalibration:</strong> Spend 60s in quiet focus before making phone calls or checking messages: <em>"Thank you, thank you, thank you for the privilege to serve, the willingness of our members, and the opportunity to build community today."</em></li>
+                <li><strong>2. Command Directive:</strong> Shift away from anxious internal dialogue: <em>"Show me and tell me what specific tasks to delegate right now and who is best suited to help with setup."</em></li>
+                <li><strong>3. Energy Conduit:</strong> Recognize your leadership as a facilitator: <em>"I am creating a structure for people to gather and serve. My job is to execute the simple plan step-by-step and let ward members contribute their part."</em></li>
+              </ul>
+            </div>
+
+          </div>
         </div>
       </details>
 
@@ -63,10 +101,11 @@
         <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center">
           <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">5-Minute Timer</span>
           <div id="timer-display" class="text-5xl font-mono font-bold text-slate-900 my-4">05:00</div>
-          <div class="flex space-x-2">
+          <div class="flex flex-wrap justify-center gap-2">
             <button onclick="startTimer()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition">Start</button>
             <button onclick="pauseTimer()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">Pause</button>
             <button onclick="resetTimer()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">Reset</button>
+            <button onclick="playChime()" class="px-3 py-2 bg-amber-50 hover:bg-amber-100 text-amber-700 rounded-lg text-xs font-medium transition" title="Test oriental chime sound">🔊 Test Chime</button>
           </div>
         </div>
 
@@ -325,6 +364,7 @@
 
     var timerInterval = null;
     var timerSeconds = 300;
+    var audioCtx = null;
 
     function init() {
       var saved = localStorage.getItem('mindset_calibration_data');
@@ -355,49 +395,36 @@
       if (tabId === 'tab-analytics') renderAnalytics();
     }
 
-    function renderAll() {
-      document.getElementById('priorityInput').value = state.priority || '';
-      if (state.directive) {
-        var out = document.getElementById('directiveOutput');
-        out.innerText = state.directive;
-        out.classList.remove('hidden');
-      }
+    // Gentle Oriental Chime Sound Generator (Web Audio API)
+    function playChime() {
+      try {
+        var AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!audioCtx) audioCtx = new AudioContext();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
 
-      if (state.checklist) {
-        Object.keys(state.checklist).forEach(function(id) {
-          var el = document.getElementById(id);
-          if (el) el.checked = !!state.checklist[id];
+        var now = audioCtx.currentTime;
+        var freqs = [440.00, 659.25]; // Eastern Pentatonic Tuning (A4 + E5)
+
+        freqs.forEach(function(freq, i) {
+          var osc = audioCtx.createOscillator();
+          var gain = audioCtx.createGain();
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, now + (i * 0.15));
+
+          gain.gain.setValueAtTime(0.001, now + (i * 0.15));
+          gain.gain.exponentialRampToValueAtTime(0.2, now + (i * 0.15) + 0.05);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + (i * 0.15) + 2.5);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start(now + (i * 0.15));
+          osc.stop(now + (i * 0.15) + 2.6);
         });
+      } catch (err) {
+        console.log("Audio play prevented or unsupported.");
       }
-
-      var tbody = document.getElementById('auditTableBody');
-      tbody.innerHTML = '';
-      if (!state.audit || state.audit.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="6" class="p-4 text-center text-slate-400">No friction events logged yet.</td></tr>';
-      } else {
-        state.audit.forEach(function(item, index) {
-          var tr = document.createElement('tr');
-          tr.className = 'hover:bg-slate-50';
-          tr.innerHTML = '<td class="p-2 font-medium text-slate-800">' + escapeHtml(item.trigger) + '</td>' +
-            '<td class="p-2 text-slate-600">' + escapeHtml(item.thought) + '</td>' +
-            '<td class="p-2 text-slate-600">' + escapeHtml(item.behavior) + '</td>' +
-            '<td class="p-2"><span class="px-2 py-0.5 text-xs bg-slate-100 rounded text-slate-700 font-medium">' + item.category + '</span></td>' +
-            '<td class="p-2 font-bold ' + (item.severity >= 4 ? 'text-red-600' : 'text-slate-700') + '">' + item.severity + '</td>' +
-            '<td class="p-2 text-right"><button onclick="deleteAuditEntry(' + index + ')" class="text-red-500 hover:text-red-700">Delete</button></td>';
-          tbody.appendChild(tr);
-        });
-      }
-
-      if (state.niche) {
-        document.getElementById('nicheSkills').value = state.niche.skills || '';
-        document.getElementById('nicheIntersections').value = state.niche.intersections || '';
-        document.getElementById('nichePainPoints').value = state.niche.painPoints || '';
-        document.getElementById('nicheGapAnalysis').value = state.niche.gapAnalysis || '';
-        document.getElementById('nicheAudience').value = state.niche.audience || '';
-        document.getElementById('nicheValueProp').value = state.niche.valueProp || '';
-      }
-
-      renderAnalytics();
     }
 
     function updateTimerDisplay() {
@@ -408,10 +435,21 @@
 
     function startTimer() {
       if (timerInterval) return;
+      
+      try {
+        var AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!audioCtx) audioCtx = new AudioContext();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+      } catch(e) {}
+
       timerInterval = setInterval(function() {
         if (timerSeconds > 0) {
           timerSeconds--;
           updateTimerDisplay();
+
+          if (timerSeconds === 15) {
+            playChime();
+          }
         } else {
           pauseTimer();
           alert('Morning calibration complete.');
@@ -492,6 +530,51 @@
       saveState();
     }
 
+    function renderAll() {
+      document.getElementById('priorityInput').value = state.priority || '';
+      if (state.directive) {
+        var out = document.getElementById('directiveOutput');
+        out.innerText = state.directive;
+        out.classList.remove('hidden');
+      }
+
+      if (state.checklist) {
+        Object.keys(state.checklist).forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.checked = !!state.checklist[id];
+        });
+      }
+
+      var tbody = document.getElementById('auditTableBody');
+      tbody.innerHTML = '';
+      if (!state.audit || state.audit.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="p-4 text-center text-slate-400">No friction events logged yet.</td></tr>';
+      } else {
+        state.audit.forEach(function(item, index) {
+          var tr = document.createElement('tr');
+          tr.className = 'hover:bg-slate-50';
+          tr.innerHTML = '<td class="p-2 font-medium text-slate-800">' + escapeHtml(item.trigger) + '</td>' +
+            '<td class="p-2 text-slate-600">' + escapeHtml(item.thought) + '</td>' +
+            '<td class="p-2 text-slate-600">' + escapeHtml(item.behavior) + '</td>' +
+            '<td class="p-2"><span class="px-2 py-0.5 text-xs bg-slate-100 rounded text-slate-700 font-medium">' + item.category + '</span></td>' +
+            '<td class="p-2 font-bold ' + (item.severity >= 4 ? 'text-red-600' : 'text-slate-700') + '">' + item.severity + '</td>' +
+            '<td class="p-2 text-right"><button onclick="deleteAuditEntry(' + index + ')" class="text-red-500 hover:text-red-700">Delete</button></td>';
+          tbody.appendChild(tr);
+        });
+      }
+
+      if (state.niche) {
+        document.getElementById('nicheSkills').value = state.niche.skills || '';
+        document.getElementById('nicheIntersections').value = state.niche.intersections || '';
+        document.getElementById('nichePainPoints').value = state.niche.painPoints || '';
+        document.getElementById('nicheGapAnalysis').value = state.niche.gapAnalysis || '';
+        document.getElementById('nicheAudience').value = state.niche.audience || '';
+        document.getElementById('nicheValueProp').value = state.niche.valueProp || '';
+      }
+
+      renderAnalytics();
+    }
+
     function exportData() {
       var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
       var a = document.createElement('a');
@@ -559,3 +642,5 @@
   </script>
 </body>
 </html>
+
+```
