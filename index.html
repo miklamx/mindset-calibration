@@ -1,3 +1,10 @@
+Here is the updated `index.html` file.
+
+The detailed breakdown of what to do during the 5-minute countdown is now neatly plotted directly underneath the **5-Minute Activity Calibration Protocol Checklist** header as a clean, scrollable subheader callout (`max-h-60 overflow-y-auto`). It preserves all the core instructional value while keeping the UI compact and easy to read.
+
+### Updated `index.html`
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -193,7 +200,25 @@
 
       <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
         <h2 class="text-lg font-bold text-slate-900">5-Minute Activity Calibration Protocol Checklist</h2>
-        <div class="space-y-3">
+        
+        <!-- Subheader Instruction Callout Box -->
+        <details class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 cursor-pointer">
+          <summary class="font-semibold text-blue-700 flex justify-between items-center">
+            <span>📋 Protocol Guidelines: What to do during the 5-Minute Timer</span>
+            <span class="text-slate-400 font-normal">Expand / Collapse</span>
+          </summary>
+          <div class="mt-2 pt-2 border-t border-slate-200 scroll-box max-h-52 overflow-y-auto pr-1 space-y-2 leading-relaxed">
+            <p><strong>Purpose:</strong> Mental conditioning, alignment, and focus calibration before starting work—not brainstorming or active drafting.</p>
+            <div class="space-y-1.5">
+              <p><strong>• Step 1: Grounding & Anchor (60s)</strong> — Close out distractions, take 3 deep breaths, and repeat gratitude aloud. Ground your nervous system to halt early urgency.</p>
+              <p><strong>• Step 2: Active Directives (90s)</strong> — State your directive clearly to set your mental target. Instruct your mind where to focus attention once the timer ends.</p>
+              <p><strong>• Step 3: Energy Conduit Stance (90s)</strong> — Adopt an observer mindset. Reframe work so you focus strictly on standard execution rather than stressing over immediate outcomes.</p>
+              <p><strong>• Step 4: Journal & Close (60s)</strong> — Log your #1 priority for the day in a few words, state your closing declaration, and transition into active work when the chime sounds.</p>
+            </div>
+          </div>
+        </details>
+
+        <div class="space-y-3 pt-2">
           <label class="flex items-start space-x-3 cursor-pointer">
             <input type="checkbox" id="check-1" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
             <div>
