@@ -1,9 +1,14 @@
+Here is the updated `index.html` file with the title updated to **Mindset Calibration Suite**, the subtitle simplified to **Positive Alignment & Calibration Engine**, and the first tab renamed to **Activity Calibration** (including the navigation tab and header text):
+
+### Updated `index.html`
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mindset Calibration & Niche Execution Suite</title>
+  <title>Mindset Calibration Suite</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -27,7 +32,7 @@
         <div class="bg-blue-600 text-white p-2 rounded-lg font-bold text-lg">MC</div>
         <div>
           <h1 class="font-bold text-slate-900 text-lg">Mindset Calibration Suite</h1>
-          <p class="text-xs text-slate-500">Niche Alignment & Operational Calibration Engine</p>
+          <p class="text-xs text-slate-500">Positive Alignment & Calibration Engine</p>
         </div>
       </div>
       <div class="flex items-center space-x-2">
@@ -40,7 +45,7 @@
       </div>
     </div>
     <nav class="max-w-6xl mx-auto px-4 flex flex-wrap space-x-4 sm:space-x-8 border-t border-slate-100 text-sm">
-      <button onclick="showTab('tab-calibration')" id="btn-tab-calibration" class="nav-btn py-3 active">Morning Calibration</button>
+      <button onclick="showTab('tab-calibration')" id="btn-tab-calibration" class="nav-btn py-3 active">Activity Calibration</button>
       <button onclick="showTab('tab-audit')" id="btn-tab-audit" class="nav-btn py-3 text-slate-500 hover:text-slate-800">7-Day Audit</button>
       <button onclick="showTab('tab-niche')" id="btn-tab-niche" class="nav-btn py-3 text-slate-500 hover:text-slate-800">Niche Framework</button>
       <button onclick="showTab('tab-sop')" id="btn-tab-sop" class="nav-btn py-3 text-slate-500 hover:text-slate-800">Operational SOP</button>
@@ -51,7 +56,7 @@
   <!-- Main Content Area -->
   <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full">
 
-    <!-- TAB 1: MORNING CALIBRATION -->
+    <!-- TAB 1: ACTIVITY CALIBRATION -->
     <div id="tab-calibration" class="tab-content active space-y-6">
       <details class="bg-blue-50 border border-blue-200 rounded-xl p-4 text-xs text-blue-900 cursor-pointer">
         <summary class="font-bold flex justify-between items-center">
@@ -68,7 +73,7 @@
               <p><strong>Scenario:</strong> Preparing a large-scale project estimate or managing a tight deadline for a commercial supplier project under pressure.</p>
               
               <div class="space-y-2">
-                <p class="font-semibold text-slate-800">1. Morning Recalibration Routine</p>
+                <p class="font-semibold text-slate-800">1. Recalibration Routine</p>
                 <p class="text-slate-600"><strong>Application:</strong> Before opening estimation software, checking emails, or reviewing site plans, spend 60 seconds acknowledging the resources and experience at hand.</p>
                 <p class="text-slate-700"><strong>Action:</strong> State mentally or aloud: <em>"Thank you, thank you, thank you for the clarity, focus, and capability to execute this accurately today."</em></p>
                 <p class="text-slate-500 italic"><strong>Why it works:</strong> Breaks early morning anxiety and anchors your mind in capability rather than deadline panic.</p>
@@ -101,7 +106,7 @@
               <p><strong>Scenario:</strong> Scoping out or building a new custom software application or automated workflow under tight client expectations.</p>
               
               <div class="space-y-2">
-                <p class="font-semibold text-slate-800">1. Morning Recalibration Routine</p>
+                <p class="font-semibold text-slate-800">1. Recalibration Routine</p>
                 <p class="text-slate-600"><strong>Application:</strong> Pause at your desk before opening your IDE, terminal, or communication channels.</p>
                 <p class="text-slate-700"><strong>Action:</strong> Take three deep breaths and declare: <em>"Thank you, thank you, thank you for the logic, clarity, and tools available to build this clean solution."</em></p>
                 <p class="text-slate-500 italic"><strong>Why it works:</strong> Prevents jumping straight into reactive debugging or fragmented coding without systematic focus.</p>
@@ -134,7 +139,7 @@
               <p><strong>Scenario:</strong> Planning a Saturday morning neighborhood service project, a ward dinner, or a Relief Society workshop where logistics, assignments, and attendance feel overwhelming.</p>
               
               <div class="space-y-2">
-                <p class="font-semibold text-slate-800">1. Morning Recalibration Routine</p>
+                <p class="font-semibold text-slate-800">1. Recalibration Routine</p>
                 <p class="text-slate-600"><strong>Application:</strong> Before starting your prep list, making phone calls for assignments, or worrying about turnout, spend 60 seconds in quiet focus before opening your phone or ward list.</p>
                 <p class="text-slate-700"><strong>Action:</strong> State mentally or aloud: <em>"Thank you, thank you, thank you for the privilege to serve, the willingness of our ward members, and the opportunity to build community today."</em></p>
                 <p class="text-slate-500 italic"><strong>Why it works:</strong> Shifts your mindset out of stress and scarcity ("No one is going to show up," "I have too much to do") and anchors you in gratitude and purpose.</p>
@@ -192,7 +197,7 @@
       </div>
 
       <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
-        <h2 class="text-lg font-bold text-slate-900">5-Minute Calibration Protocol Checklist</h2>
+        <h2 class="text-lg font-bold text-slate-900">5-Minute Activity Calibration Protocol Checklist</h2>
         <div class="space-y-3">
           <label class="flex items-start space-x-3 cursor-pointer">
             <input type="checkbox" id="check-1" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
@@ -377,9 +382,9 @@
       <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6 text-sm leading-relaxed">
         <h2 class="text-xl font-bold text-slate-900">Technical Standard Operating Procedure (SOP)</h2>
         <div class="border-l-4 border-blue-600 pl-4 space-y-2">
-          <h3 class="font-bold text-slate-900">SOP-01: Daily Calibration System</h3>
+          <h3 class="font-bold text-slate-900">SOP-01: Activity Calibration System</h3>
           <p class="text-slate-600"><strong>Inputs:</strong> Quiet workspace prior to checking email/messages.</p>
-          <p class="text-slate-600"><strong>Action Steps:</strong> Run morning declarations (60s), state active commands (90s), set 1 priority, adopt process conduit mindset.</p>
+          <p class="text-slate-600"><strong>Action Steps:</strong> Run grounding declarations (60s), state active commands (90s), set 1 priority, adopt process conduit mindset.</p>
         </div>
         <div class="border-l-4 border-indigo-600 pl-4 space-y-2">
           <h3 class="font-bold text-slate-900">SOP-02: Real-Time Cognitive Audit</h3>
@@ -520,7 +525,7 @@
           }
         } else {
           pauseTimer();
-          alert('Morning calibration complete.');
+          alert('Activity calibration complete.');
         }
       }, 1000);
     }
