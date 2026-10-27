@@ -63,4 +63,499 @@
         <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center">
           <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">5-Minute Timer</span>
           <div id="timer-display" class="text-5xl font-mono font-bold text-slate-900 my-4">05:00</div>
-          <div class="flex
+          <div class="flex space-x-2">
+            <button onclick="startTimer()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition">Start</button>
+            <button onclick="pauseTimer()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">Pause</button>
+            <button onclick="resetTimer()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">Reset</button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm md:col-span-2 space-y-4">
+          <h2 class="text-lg font-bold text-slate-900">Command Directive Generator</h2>
+          <p class="text-xs text-slate-500">Formulate active imperative commands for your day's single primary deliverable.</p>
+          <div class="space-y-3">
+            <div>
+              <label class="block text-xs font-medium text-slate-700 mb-1">Single Core Priority</label>
+              <input type="text" id="priorityInput" placeholder="e.g., Finalize market validation questionnaire" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+            <button onclick="generateDirective()" class="w-full py-2 bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium rounded-lg transition">Generate Command Directive</button>
+            <div id="directiveOutput" class="p-4 bg-blue-50 border border-blue-200 rounded-lg text-sm text-blue-900 font-medium hidden"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+        <h2 class="text-lg font-bold text-slate-900">5-Minute Calibration Protocol Checklist</h2>
+        <div class="space-y-3">
+          <label class="flex items-start space-x-3 cursor-pointer">
+            <input type="checkbox" id="check-1" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
+            <div>
+              <span class="text-sm font-semibold text-slate-800">1. Grounding & Anchor Declaration (60s)</span>
+              <p class="text-xs text-slate-500">Repeat aloud: "Thank you, thank you, thank you for this focus and opportunity." Take 3 deep breaths.</p>
+            </div>
+          </label>
+          <label class="flex items-start space-x-3 cursor-pointer">
+            <input type="checkbox" id="check-2" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
+            <div>
+              <span class="text-sm font-semibold text-slate-800">2. Active Directives (90s)</span>
+              <p class="text-xs text-slate-500">State: "Show me and tell me what I need to know today to make maximum progress on my core priorities."</p>
+            </div>
+          </label>
+          <label class="flex items-start space-x-3 cursor-pointer">
+            <input type="checkbox" id="check-3" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
+            <div>
+              <span class="text-sm font-semibold text-slate-800">3. Energy Conduit Stance (90s)</span>
+              <p class="text-xs text-slate-500">Reframe execution: Execute work through process standards without demanding instant outcomes.</p>
+            </div>
+          </label>
+          <label class="flex items-start space-x-3 cursor-pointer">
+            <input type="checkbox" id="check-4" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
+            <div>
+              <span class="text-sm font-semibold text-slate-800">4. Journal & Close (60s)</span>
+              <p class="text-xs text-slate-500">Log core priority and close with: "My focus is clear, my priorities are set, and I am ready to execute."</p>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: 7-DAY AUDIT -->
+    <div id="tab-audit" class="tab-content space-y-6">
+      <details class="bg-indigo-50 border border-indigo-200 rounded-xl p-4 text-xs text-indigo-900 cursor-pointer">
+        <summary class="font-bold flex justify-between items-center">
+          <span>💡 Quick Guide: How to log 7-Day Audit friction entries</span>
+          <span class="text-indigo-600 font-normal">Click to expand / collapse</span>
+        </summary>
+        <div class="mt-3 space-y-2 leading-relaxed border-t border-indigo-200 pt-3">
+          <p><strong>Goal:</strong> Log exact moments when you hesitate, procrastinate, or feel anxiety during work to identify root friction drivers.</p>
+          <p><strong>Example:</strong> Trigger: Cold outreach | Reactive Thought: "They won't reply" | Behavior: Reorganized files | Category: Authority Gap.</p>
+        </div>
+      </details>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+        <h2 class="text-lg font-bold text-slate-900">Log Cognitive Friction Event</h2>
+        <form onsubmit="addAuditEntry(event)" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Trigger Event / Task</label>
+            <input type="text" id="auditTrigger" required placeholder="e.g., Cold outreach emails" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Immediate Reactive Thought</label>
+            <input type="text" id="auditThought" required placeholder="e.g., 'They won't reply anyway'" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Resulting Behavior</label>
+            <input type="text" id="auditBehavior" required placeholder="e.g., Switched to reorganizing files" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+          </div>
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <label class="block text-xs font-medium text-slate-700 mb-1">Severity (1-5)</label>
+              <select id="auditSeverity" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm outline-none">
+                <option value="1">1 - Mild</option>
+                <option value="2">2 - Low</option>
+                <option value="3">3 - Moderate</option>
+                <option value="4">4 - High</option>
+                <option value="5">5 - Severe</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-slate-700 mb-1">Root Driver</label>
+              <select id="auditCategory" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm outline-none">
+                <option value="Authority Gap">Authority Gap</option>
+                <option value="Perfectionism">Perfectionism</option>
+                <option value="Scarcity">Resource Scarcity</option>
+              </select>
+            </div>
+          </div>
+          <div class="md:col-span-2">
+            <button type="submit" class="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium text-sm rounded-lg transition">Log Friction Entry</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm overflow-x-auto">
+        <h2 class="text-lg font-bold text-slate-900 mb-4">Logged Friction Events</h2>
+        <table class="w-full text-left text-xs border-collapse">
+          <thead>
+            <tr class="border-b border-slate-200 text-slate-500 font-semibold">
+              <th class="p-2">Trigger</th>
+              <th class="p-2">Reactive Thought</th>
+              <th class="p-2">Behavior</th>
+              <th class="p-2">Category</th>
+              <th class="p-2">Severity</th>
+              <th class="p-2 text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody id="auditTableBody" class="divide-y divide-slate-100"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 3: NICHE FRAMEWORK -->
+    <div id="tab-niche" class="tab-content space-y-6">
+      <details class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-900 cursor-pointer">
+        <summary class="font-bold flex justify-between items-center">
+          <span>💡 Quick Guide: Master Niche Synthesis Framework</span>
+          <span class="text-amber-600 font-normal">Click to expand / collapse</span>
+        </summary>
+        <div class="mt-3 space-y-2 leading-relaxed border-t border-amber-200 pt-3">
+          <p><strong>Goal:</strong> Structured 3-stage framework to map skills, validate demand, and define positioning.</p>
+        </div>
+      </details>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+        <div class="border-b border-slate-100 pb-3">
+          <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Stage 1</span>
+          <h2 class="text-lg font-bold text-slate-900">Internal Discovery & Inventory</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Core Skills & Expertise</label>
+            <textarea id="nicheSkills" oninput="saveNicheFramework()" rows="3" placeholder="List core technical and business skills..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Unique Intersections & Edge Cases</label>
+            <textarea id="nicheIntersections" oninput="saveNicheFramework()" rows="3" placeholder="List unique overlap points (e.g., Estimating + Custom Apps)..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+        <div class="border-b border-slate-100 pb-3">
+          <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Stage 2</span>
+          <h2 class="text-lg font-bold text-slate-900">Market Validation & Demand Testing</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Target Market Pain Points</label>
+            <textarea id="nichePainPoints" oninput="saveNicheFramework()" rows="3" placeholder="List exact operational bottlenecks..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Competitor Gap Analysis</label>
+            <textarea id="nicheGapAnalysis" oninput="saveNicheFramework()" rows="3" placeholder="Where do existing off-the-shelf tools fail?..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+        <div class="border-b border-slate-100 pb-3">
+          <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Stage 3</span>
+          <h2 class="text-lg font-bold text-slate-900">Positioning & Minimum Viable Offering</h2>
+        </div>
+        <div class="space-y-4">
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Target Audience Statement</label>
+            <input type="text" id="nicheAudience" oninput="saveNicheFramework()" placeholder="e.g., Commercial contractors needing custom CRM tools" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-700 mb-1">Core Value Proposition Directive</label>
+            <textarea id="nicheValueProp" oninput="saveNicheFramework()" rows="2" placeholder="I help [Target Audience] solve [Pain Point] through [Method]..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: OPERATIONAL SOP -->
+    <div id="tab-sop" class="tab-content space-y-6">
+      <details class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-xs text-emerald-900 cursor-pointer">
+        <summary class="font-bold flex justify-between items-center">
+          <span>💡 Quick Guide: How to use the Operational SOP</span>
+          <span class="text-emerald-600 font-normal">Click to expand / collapse</span>
+        </summary>
+        <div class="mt-3 space-y-2 leading-relaxed border-t border-emerald-200 pt-3">
+          <p><strong>Goal:</strong> Standard guidelines for daily calibration, audit logging, and focus recapture.</p>
+        </div>
+      </details>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6 text-sm leading-relaxed">
+        <h2 class="text-xl font-bold text-slate-900">Technical Standard Operating Procedure (SOP)</h2>
+        <div class="border-l-4 border-blue-600 pl-4 space-y-2">
+          <h3 class="font-bold text-slate-900">SOP-01: Daily Calibration System</h3>
+          <p class="text-slate-600"><strong>Inputs:</strong> Quiet workspace prior to checking email/messages.</p>
+          <p class="text-slate-600"><strong>Action Steps:</strong> Run morning declarations (60s), state active commands (90s), set 1 priority, adopt process conduit mindset.</p>
+        </div>
+        <div class="border-l-4 border-indigo-600 pl-4 space-y-2">
+          <h3 class="font-bold text-slate-900">SOP-02: Real-Time Cognitive Audit</h3>
+          <p class="text-slate-600"><strong>Inputs:</strong> Friction log during active work sessions.</p>
+          <p class="text-slate-600"><strong>Action Steps:</strong> Capture triggers, reactions, and severity immediately. Consolidate entries weekly.</p>
+        </div>
+        <div class="border-l-4 border-emerald-600 pl-4 space-y-2">
+          <h3 class="font-bold text-slate-900">SOP-03: Focus Recapture</h3>
+          <p class="text-slate-600"><strong>Inputs:</strong> Completed projects, meetings, deliverables.</p>
+          <p class="text-slate-600"><strong>Action Steps:</strong> Work in observer mode. Re-internalize mental focus upon task completion to eliminate emotional burnout.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: ANALYTICS -->
+    <div id="tab-analytics" class="tab-content space-y-6">
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+        <h2 class="text-lg font-bold text-slate-900">Friction Metrics Summary</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+          <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+            <span class="text-xs text-slate-500 font-medium">Total Friction Events</span>
+            <div id="metric-total" class="text-3xl font-bold text-slate-900 mt-1">0</div>
+          </div>
+          <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+            <span class="text-xs text-slate-500 font-medium">Top Friction Driver</span>
+            <div id="metric-driver" class="text-lg font-bold text-blue-600 mt-2">None</div>
+          </div>
+          <div class="p-4 bg-slate-50 rounded-lg border border-slate-200">
+            <span class="text-xs text-slate-500 font-medium">High Severity Events (4-5)</span>
+            <div id="metric-severe" class="text-3xl font-bold text-red-600 mt-1">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-400">
+    Mindset Calibration Suite &copy; 2026. Local Storage Active.
+  </footer>
+
+  <script>
+    var state = {
+      priority: '',
+      directive: '',
+      checklist: { 'check-1': false, 'check-2': false, 'check-3': false, 'check-4': false },
+      audit: [],
+      niche: { skills: '', intersections: '', painPoints: '', gapAnalysis: '', audience: '', valueProp: '' }
+    };
+
+    var timerInterval = null;
+    var timerSeconds = 300;
+
+    function init() {
+      var saved = localStorage.getItem('mindset_calibration_data');
+      if (saved) {
+        try { state = JSON.parse(saved); } catch (e) { console.error(e); }
+      }
+      renderAll();
+    }
+
+    function saveState() {
+      localStorage.setItem('mindset_calibration_data', JSON.stringify(state));
+      renderAnalytics();
+    }
+
+    function showTab(tabId) {
+      var contents = document.querySelectorAll('.tab-content');
+      contents.forEach(function(el) { el.classList.remove('active'); });
+
+      var buttons = document.querySelectorAll('.nav-btn');
+      buttons.forEach(function(btn) { btn.classList.remove('active'); btn.classList.add('text-slate-500'); });
+
+      var targetContent = document.getElementById(tabId);
+      if (targetContent) targetContent.classList.add('active');
+
+      var targetBtn = document.getElementById('btn-' + tabId);
+      if (targetBtn) { targetBtn.classList.add('active'); targetBtn.classList.remove('text-slate-500'); }
+
+      if (tabId === 'tab-analytics') renderAnalytics();
+    }
+
+    function renderAll() {
+      document.getElementById('priorityInput').value = state.priority || '';
+      if (state.directive) {
+        var out = document.getElementById('directiveOutput');
+        out.innerText = state.directive;
+        out.classList.remove('hidden');
+      }
+
+      if (state.checklist) {
+        Object.keys(state.checklist).forEach(function(id) {
+          var el = document.getElementById(id);
+          if (el) el.checked = !!state.checklist[id];
+        });
+      }
+
+      var tbody = document.getElementById('auditTableBody');
+      tbody.innerHTML = '';
+      if (!state.audit || state.audit.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="6" class="p-4 text-center text-slate-400">No friction events logged yet.</td></tr>';
+      } else {
+        state.audit.forEach(function(item, index) {
+          var tr = document.createElement('tr');
+          tr.className = 'hover:bg-slate-50';
+          tr.innerHTML = '<td class="p-2 font-medium text-slate-800">' + escapeHtml(item.trigger) + '</td>' +
+            '<td class="p-2 text-slate-600">' + escapeHtml(item.thought) + '</td>' +
+            '<td class="p-2 text-slate-600">' + escapeHtml(item.behavior) + '</td>' +
+            '<td class="p-2"><span class="px-2 py-0.5 text-xs bg-slate-100 rounded text-slate-700 font-medium">' + item.category + '</span></td>' +
+            '<td class="p-2 font-bold ' + (item.severity >= 4 ? 'text-red-600' : 'text-slate-700') + '">' + item.severity + '</td>' +
+            '<td class="p-2 text-right"><button onclick="deleteAuditEntry(' + index + ')" class="text-red-500 hover:text-red-700">Delete</button></td>';
+          tbody.appendChild(tr);
+        });
+      }
+
+      if (state.niche) {
+        document.getElementById('nicheSkills').value = state.niche.skills || '';
+        document.getElementById('nicheIntersections').value = state.niche.intersections || '';
+        document.getElementById('nichePainPoints').value = state.niche.painPoints || '';
+        document.getElementById('nicheGapAnalysis').value = state.niche.gapAnalysis || '';
+        document.getElementById('nicheAudience').value = state.niche.audience || '';
+        document.getElementById('nicheValueProp').value = state.niche.valueProp || '';
+      }
+
+      renderAnalytics();
+    }
+
+    function updateTimerDisplay() {
+      var mins = Math.floor(timerSeconds / 60).toString().padStart(2, '0');
+      var secs = (timerSeconds % 60).toString().padStart(2, '0');
+      document.getElementById('timer-display').innerText = mins + ':' + secs;
+    }
+
+    function startTimer() {
+      if (timerInterval) return;
+      timerInterval = setInterval(function() {
+        if (timerSeconds > 0) {
+          timerSeconds--;
+          updateTimerDisplay();
+        } else {
+          pauseTimer();
+          alert('Morning calibration complete.');
+        }
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      clearInterval(timerInterval);
+      timerInterval = null;
+    }
+
+    function resetTimer() {
+      pauseTimer();
+      timerSeconds = 300;
+      updateTimerDisplay();
+    }
+
+    function generateDirective() {
+      var priority = document.getElementById('priorityInput').value.trim();
+      if (!priority) return;
+
+      var directive = 'COMMAND DIRECTIVE: Show me and tell me what I need to know today to execute maximum output on: "' + priority + '". I operate through clarity and structured execution.';
+      state.priority = priority;
+      state.directive = directive;
+
+      var out = document.getElementById('directiveOutput');
+      out.innerText = directive;
+      out.classList.remove('hidden');
+
+      saveState();
+    }
+
+    function saveChecklist() {
+      state.checklist = {
+        'check-1': document.getElementById('check-1').checked,
+        'check-2': document.getElementById('check-2').checked,
+        'check-3': document.getElementById('check-3').checked,
+        'check-4': document.getElementById('check-4').checked
+      };
+      saveState();
+    }
+
+    function addAuditEntry(e) {
+      e.preventDefault();
+      var entry = {
+        trigger: document.getElementById('auditTrigger').value,
+        thought: document.getElementById('auditThought').value,
+        behavior: document.getElementById('auditBehavior').value,
+        severity: parseInt(document.getElementById('auditSeverity').value),
+        category: document.getElementById('auditCategory').value,
+        timestamp: new Date().toISOString()
+      };
+
+      if (!state.audit) state.audit = [];
+      state.audit.unshift(entry);
+      saveState();
+      renderAll();
+
+      e.target.reset();
+    }
+
+    function deleteAuditEntry(index) {
+      state.audit.splice(index, 1);
+      saveState();
+      renderAll();
+    }
+
+    function saveNicheFramework() {
+      state.niche = {
+        skills: document.getElementById('nicheSkills').value,
+        intersections: document.getElementById('nicheIntersections').value,
+        painPoints: document.getElementById('nichePainPoints').value,
+        gapAnalysis: document.getElementById('nicheGapAnalysis').value,
+        audience: document.getElementById('nicheAudience').value,
+        valueProp: document.getElementById('nicheValueProp').value
+      };
+      saveState();
+    }
+
+    function exportData() {
+      var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
+      var a = document.createElement('a');
+      a.href = dataStr;
+      a.download = "mindset_calibration_backup.json";
+      a.click();
+    }
+
+    function importData(event) {
+      var file = event.target.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          state = JSON.parse(e.target.result);
+          saveState();
+          renderAll();
+          alert('Data imported successfully.');
+        } catch (err) {
+          alert('Invalid JSON file format.');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function resetData() {
+      if (confirm('Reset all calibration data?')) {
+        state = { priority: '', directive: '', checklist: {}, audit: [], niche: { skills: '', intersections: '', painPoints: '', gapAnalysis: '', audience: '', valueProp: '' } };
+        saveState();
+        renderAll();
+      }
+    }
+
+    function renderAnalytics() {
+      var total = state.audit ? state.audit.length : 0;
+      var severe = 0;
+      var counts = { 'Authority Gap': 0, 'Perfectionism': 0, 'Scarcity': 0 };
+
+      if (state.audit) {
+        state.audit.forEach(function(item) {
+          if (item.severity >= 4) severe++;
+          if (counts[item.category] !== undefined) counts[item.category]++;
+        });
+      }
+
+      var topDriver = 'None';
+      var maxCount = 0;
+      Object.keys(counts).forEach(function(cat) {
+        if (counts[cat] > maxCount) {
+          maxCount = counts[cat];
+          topDriver = cat;
+        }
+      });
+
+      document.getElementById('metric-total').innerText = total;
+      document.getElementById('metric-driver').innerText = topDriver;
+      document.getElementById('metric-severe').innerText = severe;
+    }
+
+    function escapeHtml(text) {
+      return (text || '').replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>
