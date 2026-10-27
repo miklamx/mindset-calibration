@@ -14,7 +14,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
 
-  <!-- Header & Navigation -->
+  <!-- Header Navigation -->
   <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
       <div class="flex items-center space-x-3">
@@ -41,63 +41,27 @@
     </nav>
   </header>
 
-  <!-- Main Content Area -->
+  <!-- Main Area -->
   <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full">
 
-    <!-- Tab 1: Morning Calibration -->
+    <!-- TAB 1: CALIBRATION -->
     <section id="tab-calibration" class="space-y-6">
-      
-      <!-- Collapsible Help Accordion -->
       <details class="bg-blue-50 border border-blue-200 rounded-xl p-4 text-xs text-blue-900 cursor-pointer">
-        <summary class="font-bold flex items-center justify-between">
-          <span>💡 Newbie Guide: What is Morning Calibration & How do I use it?</span>
-          <span class="text-blue-600">Click to expand / collapse</span>
+        <summary class="font-bold flex justify-between items-center">
+          <span>💡 Quick Guide: How to use Morning Calibration</span>
+          <span class="text-blue-600">Expand / Collapse</span>
         </summary>
         <div class="mt-3 space-y-2 leading-relaxed border-t border-blue-200 pt-3">
-          <p><strong>Purpose:</strong> Sets your mental focus before checking emails, news, or messages so you lead your day rather than reacting to others.</p>
-          <p><strong>Real-World Example:</strong> You wake up feeling overwhelmed. Before opening your laptop, start the 5-minute timer. Check off each box, type your #1 priority (e.g., <em>"Write 3 outline slides for client proposal"</em>), and click 'Generate Imperative Command'. Read the generated directive aloud to lock in your focus.</p>
+          <p><strong>Goal:</strong> Set your mind before touching email or social media.</p>
+          <p><strong>Example:</strong> Start the 5-minute timer. Check off the protocol boxes, type your single key priority (e.g., <em>"Write 3 slides for client pitch"</em>), and click 'Generate Command'.</p>
         </div>
       </details>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Timer Card -->
         <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center">
           <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">5-Minute Timer</span>
           <div id="timer-display" class="text-5xl font-mono font-bold text-slate-900 my-4">05:00</div>
           <div class="flex space-x-2">
             <button onclick="startTimer()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition">Start</button>
             <button onclick="pauseTimer()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">Pause</button>
-            <button onclick="resetTimer()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">Reset</button>
-          </div>
-        </div>
-
-        <!-- Directive Generator -->
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm md:col-span-2 space-y-4">
-          <h2 class="text-lg font-bold text-slate-900">Command Directive Generator</h2>
-          <p class="text-xs text-slate-500">Formulate active imperative commands for your day's core priorities.</p>
-          <div class="space-y-3">
-            <div>
-              <label class="block text-xs font-medium text-slate-700 mb-1">Single Core Priority</label>
-              <input type="text" id="priorityInput" placeholder="e.g., Finalize market validation questionnaire" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
-            </div>
-            <button onclick="generateDirective()" class="w-full py-2 bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium rounded-lg transition">Generate Imperative Command</button>
-            <div id="directiveOutput" class="p-4 bg-blue-50 border border-blue-200 rounded-lg text-sm text-blue-900 font-medium hidden"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Checklist -->
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
-        <h2 class="text-lg font-bold text-slate-900">5-Minute Calibration Protocol</h2>
-        <div class="space-y-3">
-          <label class="flex items-start space-x-3 cursor-pointer">
-            <input type="checkbox" id="check-1" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
-            <div>
-              <span class="text-sm font-semibold text-slate-800">Grounding & Anchor Declaration (60s)</span>
-              <p class="text-xs text-slate-500">Repeat aloud: "Thank you, thank you, thank you for this focus and opportunity." Take 3 deep breaths.</p>
-            </div>
-          </label>
-          <label class="flex items-start space-x-3 cursor-pointer">
-            <input type="checkbox" id="check-2" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
-            <div>
-              <span class="
+            <button onclick="resetTimer()" class="
