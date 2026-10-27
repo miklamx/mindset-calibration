@@ -1,10 +1,6 @@
-Here is the complete, single-file HTML code with the two new detailed examples embedded into the **Morning Calibration** quick guide.
+Here is the complete `index.html` file updated to include all **three full application examples** (Project Estimating, Custom Software Development, and Church/Community Event Planning) formatted with complete detail, bullet points, and the "Why it works" explanations inside the scrollable quick guide.
 
-To keep the UI clean and compact, the examples are placed inside an **internal scrollable box** (`max-h-60 overflow-y-auto`) with a smooth custom scrollbar.
-
-### Updated `index.html` Code
-
-Replace everything in your repository's `index.html` file with this version:
+### Complete Updated `index.html`
 
 ```html
 <!DOCTYPE html>
@@ -20,7 +16,7 @@ Replace everything in your repository's `index.html` file with this version:
     .tab-content { display: none; }
     .tab-content.active { display: block; }
     .nav-btn.active { border-bottom: 2px solid #2563eb; color: #2563eb; font-weight: 600; }
-    /* Custom thin scrollbar for help callout boxes */
+    /* Custom scrollbar for help callout boxes */
     .scroll-box::-webkit-scrollbar { width: 6px; }
     .scroll-box::-webkit-scrollbar-track { background: #eff6ff; border-radius: 4px; }
     .scroll-box::-webkit-scrollbar-thumb { background: #93c5fd; border-radius: 4px; }
@@ -64,33 +60,110 @@ Replace everything in your repository's `index.html` file with this version:
     <div id="tab-calibration" class="tab-content active space-y-6">
       <details class="bg-blue-50 border border-blue-200 rounded-xl p-4 text-xs text-blue-900 cursor-pointer">
         <summary class="font-bold flex justify-between items-center">
-          <span>💡 Quick Guide: Real-World Application Examples</span>
+          <span>💡 Quick Guide: Stage 1 Application Examples (Scrollable)</span>
           <span class="text-blue-600 font-normal">Click to expand / collapse</span>
         </summary>
         <div class="mt-3 border-t border-blue-200 pt-3">
-          <!-- Scrollable Box Container -->
-          <div class="scroll-box max-h-64 overflow-y-auto pr-2 space-y-4 leading-relaxed">
+          <!-- Scrollable Container -->
+          <div class="scroll-box max-h-80 overflow-y-auto pr-2 space-y-4 text-xs leading-relaxed">
             
             <!-- Example 1 -->
-            <div class="bg-white p-3 rounded-lg border border-blue-100 space-y-2">
-              <span class="font-bold text-blue-700 uppercase tracking-wider text-[10px]">Example 1: Complex Project Estimating & Bidding (Professional)</span>
+            <div class="bg-white p-4 rounded-lg border border-blue-100 space-y-3">
+              <span class="font-bold text-blue-700 uppercase tracking-wider text-[10px] block">Example 1: Complex Project Estimating & Bidding (Commercial / Professional)</span>
               <p><strong>Scenario:</strong> Preparing a large-scale project estimate or managing a tight deadline for a commercial supplier project under pressure.</p>
-              <ul class="list-disc list-inside space-y-1 text-slate-700">
-                <li><strong>1. Recalibration:</strong> Spend 60s in quiet focus before opening estimation software: <em>"Thank you, thank you, thank you for the clarity, focus, and capability to execute this accurately today."</em></li>
-                <li><strong>2. Command Directive:</strong> Reframe from passive anxiety: <em>"Show me and tell me the exact scope gaps and line items that require immediate attention on this bid today."</em></li>
-                <li><strong>3. Energy Conduit:</strong> Reframe execution stance: <em>"I am a structured channel through which accurate data and efficient solutions flow to the project."</em></li>
-              </ul>
+              
+              <div class="space-y-2">
+                <p class="font-semibold text-slate-800">1. Morning Recalibration Routine</p>
+                <p class="text-slate-600"><strong>Application:</strong> Before opening estimation software, checking emails, or reviewing site plans, spend 60 seconds acknowledging the resources and experience at hand.</p>
+                <p class="text-slate-700"><strong>Action:</strong> State mentally or aloud: <em>"Thank you, thank you, thank you for the clarity, focus, and capability to execute this accurately today."</em></p>
+                <p class="text-slate-500 italic"><strong>Why it works:</strong> Breaks early morning anxiety and anchors your mind in capability rather than deadline panic.</p>
+              </div>
+
+              <div class="space-y-2">
+                <p class="font-semibold text-slate-800">2. Command Statement Protocol</p>
+                <p class="text-slate-600"><strong>Application:</strong> Reframe internal dialogue from anxious petitioning to direct alignment.</p>
+                <ul class="list-disc list-inside space-y-0.5 text-slate-700">
+                  <li class="text-red-600">❌ Passive/Anxious: "I hope I don't miss anything in this scope," or "Please help me figure out these numbers."</li>
+                  <li class="text-emerald-700">✅ Command Directive: "Show me and tell me the exact scope gaps and line items that require immediate attention on this bid today."</li>
+                </ul>
+                <p class="text-slate-500 italic"><strong>Why it works:</strong> Forces your brain to actively scan for scope gaps and solutions rather than looping on risk.</p>
+              </div>
+
+              <div class="space-y-2">
+                <p class="font-semibold text-slate-800">3. Energy Conduit Protocol</p>
+                <p class="text-slate-600"><strong>Application:</strong> Frame capabilities as a process channel rather than an ego burden.</p>
+                <ul class="list-disc list-inside space-y-0.5 text-slate-700">
+                  <li class="text-red-600">❌ Ego/Ego-Burden: "I have to prove I can land this account on my own."</li>
+                  <li class="text-emerald-700">✅ Conduit Stance: "I am a structured channel through which accurate data and efficient solutions flow to the project."</li>
+                </ul>
+                <p class="text-slate-500 italic"><strong>Why it works:</strong> Removes emotional stress from bidding, keeping your focus purely on accurate execution.</p>
+              </div>
             </div>
 
             <!-- Example 2 -->
-            <div class="bg-white p-3 rounded-lg border border-blue-100 space-y-2">
-              <span class="font-bold text-indigo-700 uppercase tracking-wider text-[10px]">Example 2: Elders Quorum / Relief Society Event (Community & Service)</span>
-              <p><strong>Scenario:</strong> Planning a Saturday morning neighborhood service project, ward dinner, or workshop where logistics and attendance feel overwhelming.</p>
-              <ul class="list-disc list-inside space-y-1 text-slate-700">
-                <li><strong>1. Recalibration:</strong> Spend 60s in quiet focus before making phone calls or checking messages: <em>"Thank you, thank you, thank you for the privilege to serve, the willingness of our members, and the opportunity to build community today."</em></li>
-                <li><strong>2. Command Directive:</strong> Shift away from anxious internal dialogue: <em>"Show me and tell me what specific tasks to delegate right now and who is best suited to help with setup."</em></li>
-                <li><strong>3. Energy Conduit:</strong> Recognize your leadership as a facilitator: <em>"I am creating a structure for people to gather and serve. My job is to execute the simple plan step-by-step and let ward members contribute their part."</em></li>
-              </ul>
+            <div class="bg-white p-4 rounded-lg border border-blue-100 space-y-3">
+              <span class="font-bold text-indigo-700 uppercase tracking-wider text-[10px] block">Example 2: Custom Software Development & System Architecture (Technical / Business)</span>
+              <p><strong>Scenario:</strong> Scoping out or building a new custom software application or automated workflow under tight client expectations.</p>
+              
+              <div class="space-y-2">
+                <p class="font-semibold text-slate-800">1. Morning Recalibration Routine</p>
+                <p class="text-slate-600"><strong>Application:</strong> Pause at your desk before opening your IDE, terminal, or communication channels.</p>
+                <p class="text-slate-700"><strong>Action:</strong> Take three deep breaths and declare: <em>"Thank you, thank you, thank you for the logic, clarity, and tools available to build this clean solution."</em></p>
+                <p class="text-slate-500 italic"><strong>Why it works:</strong> Prevents jumping straight into reactive debugging or fragmented coding without systematic focus.</p>
+              </div>
+
+              <div class="space-y-2">
+                <p class="font-semibold text-slate-800">2. Command Statement Protocol</p>
+                <p class="text-slate-600"><strong>Application:</strong> Direct mental energy toward clean logic design.</p>
+                <ul class="list-disc list-inside space-y-0.5 text-slate-700">
+                  <li class="text-red-600">❌ Passive/Anxious: "I hope this architecture holds up," or "I hope I don't run into breaking bugs."</li>
+                  <li class="text-emerald-700">✅ Command Directive: "Show me and tell me the cleanest, most efficient data flow for this system today."</li>
+                </ul>
+                <p class="text-slate-500 italic"><strong>Why it works:</strong> Shifts your mindset toward building modular, reliable logic instead of worrying about hypothetical failures.</p>
+              </div>
+
+              <div class="space-y-2">
+                <p class="font-semibold text-slate-800">3. Energy Conduit Protocol</p>
+                <p class="text-slate-600"><strong>Application:</strong> Reframe software creation from personal pressure to structured execution.</p>
+                <ul class="list-disc list-inside space-y-0.5 text-slate-700">
+                  <li class="text-red-600">❌ Ego/Ego-Burden: "The entire success of this software rests on my shoulders alone."</li>
+                  <li class="text-emerald-700">✅ Conduit Stance: "I am executing a proven development standard; my role is to write clean, reliable code step-by-step."</li>
+                </ul>
+                <p class="text-slate-500 italic"><strong>Why it works:</strong> Reduces developer burnout and encourages methodical code architecture.</p>
+              </div>
+            </div>
+
+            <!-- Example 3 -->
+            <div class="bg-white p-4 rounded-lg border border-blue-100 space-y-3">
+              <span class="font-bold text-emerald-700 uppercase tracking-wider text-[10px] block">Example 3: Organizing an Elders Quorum / Relief Society Event (Community / Service)</span>
+              <p><strong>Scenario:</strong> Planning a Saturday morning neighborhood service project, a ward dinner, or a Relief Society workshop where logistics, assignments, and attendance feel overwhelming.</p>
+              
+              <div class="space-y-2">
+                <p class="font-semibold text-slate-800">1. Morning Recalibration Routine</p>
+                <p class="text-slate-600"><strong>Application:</strong> Before starting your prep list, making phone calls for assignments, or worrying about turnout, spend 60 seconds in quiet focus before opening your phone or ward list.</p>
+                <p class="text-slate-700"><strong>Action:</strong> State mentally or aloud: <em>"Thank you, thank you, thank you for the privilege to serve, the willingness of our ward members, and the opportunity to build community today."</em></p>
+                <p class="text-slate-500 italic"><strong>Why it works:</strong> Shifts your mindset out of stress and scarcity ("No one is going to show up," "I have too much to do") and anchors you in gratitude and purpose.</p>
+              </div>
+
+              <div class="space-y-2">
+                <p class="font-semibold text-slate-800">2. Command Statement Protocol</p>
+                <p class="text-slate-600"><strong>Application:</strong> Replace passive, anxious thoughts or pleading prayers with direct, active directives that focus your mind on solutions.</p>
+                <ul class="list-disc list-inside space-y-0.5 text-slate-700">
+                  <li class="text-red-600">❌ Passive/Anxious: "I hope someone answers my text to bring tables," or "Please help this event not be a disaster."</li>
+                  <li class="text-emerald-700">✅ Command Directive: "Show me and tell me what specific needs to delegate right now and who is best suited to help with the setup."</li>
+                </ul>
+                <p class="text-slate-500 italic"><strong>Why it works:</strong> An active command directs your mental focus toward actionable steps—who to call, what specific item is missing, and how to delegate clearly—rather than looping on worst-case scenarios.</p>
+              </div>
+
+              <div class="space-y-2">
+                <p class="font-semibold text-slate-800">3. Energy Conduit Protocol</p>
+                <p class="text-slate-600"><strong>Application:</strong> Frame your leadership role as a channel for ministering and bringing people together, rather than carrying the entire burden on your personal shoulders.</p>
+                <ul class="list-disc list-inside space-y-0.5 text-slate-700">
+                  <li class="text-red-600">❌ Ego/Ego-Burden: "If I don't personally set up every table, coordinate all the food, and run the whole night, this event will fail and it will be my fault."</li>
+                  <li class="text-emerald-700">✅ Conduit Stance: "I am simply creating a structure for people to gather and serve. My job is to execute the simple plan step-by-step and let the ward members contribute their part."</li>
+                </ul>
+                <p class="text-slate-500 italic"><strong>Why it works:</strong> Stepping back into a "conduit" or "observer" role removes emotional burnout, helps you delegate freely, and allows you to enjoy the activity alongside everyone else.</p>
+              </div>
             </div>
 
           </div>
