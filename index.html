@@ -1,3 +1,8 @@
+Here is the complete, updated `index.html` file.
+
+The **Niche Framework** tab has been completely updated with the new, simplified stage titles (**Stage 1: Your Strengths & Unique Edge**, **Stage 2: Real World Problems & Opportunities**, **Stage 3: Your Clear Offer**), plain-English subheaders for every fillable field, and the new, down-to-earth **Quick Guide** embedded in a scrollable box at the top of the tab.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,7 +102,7 @@
           <div class="space-y-3">
             <div>
               <label class="block text-xs font-medium text-slate-700 mb-1">Single Core Priority</label>
-              <input type="text" id="priorityInput" placeholder="e.g., Finalize market validation questionnaire" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+              <input type="text" id="priorityInput" placeholder="e.g., Price $750k commercial water heater scope and verify freight margins for Pinnacle bid" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
             </div>
             <button onclick="generateDirective()" class="w-full py-2 bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium rounded-lg transition">Generate Command Directive</button>
             <div id="directiveOutput" class="p-4 bg-blue-50 border border-blue-200 rounded-lg text-sm text-blue-900 font-medium hidden"></div>
@@ -232,29 +237,69 @@
 
     <!-- TAB 3: NICHE FRAMEWORK -->
     <div id="tab-niche" class="tab-content space-y-6">
-      <details class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-900 cursor-pointer">
+      <details class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-900 cursor-pointer" open>
         <summary class="font-bold flex justify-between items-center">
-          <span>💡 Quick Guide: Master Niche Synthesis Framework</span>
+          <span>💡 Niche Framework Quick Guide & Real-World Examples</span>
           <span class="text-amber-600 font-normal">Click to expand / collapse</span>
         </summary>
-        <div class="mt-3 space-y-2 leading-relaxed border-t border-amber-200 pt-3">
-          <p><strong>Goal:</strong> Structured 3-stage framework to map skills, validate demand, and define positioning.</p>
+        <div class="mt-3 border-t border-amber-200 pt-3">
+          <div class="scroll-box max-h-80 overflow-y-auto pr-2 space-y-4 text-xs leading-relaxed">
+            
+            <!-- Stage 1 Guide -->
+            <div class="bg-white p-3.5 rounded-lg border border-amber-100 space-y-2">
+              <span class="font-bold text-blue-700 uppercase tracking-wider text-[10px] block">Stage 1: Your Strengths & Unique Edge</span>
+              <p class="text-slate-600"><strong>Purpose:</strong> Map out what you're genuinely good at and where your background gives you an advantage.</p>
+              <div class="space-y-1.5 text-slate-700">
+                <p><strong>• Field 1 (Core Skills & Experience):</strong> List actual skills, tools, and industry know-how gained over the years.</p>
+                <p class="pl-3 text-slate-500 italic">Example (Sales): "15 years in commercial supply, multi-family project estimation, reading blueprints, managing supplier bids."</p>
+                <p><strong>• Field 2 (Your Unique Combination):</strong> Where do two of your strengths cross paths to give you an edge?</p>
+                <p class="pl-3 text-slate-500 italic">Example (Sales x Tech): "Commercial estimation experience + building custom web tools = Fast, interactive pricing specifiers for contractors."</p>
+              </div>
+            </div>
+
+            <!-- Stage 2 Guide -->
+            <div class="bg-white p-3.5 rounded-lg border border-amber-100 space-y-2">
+              <span class="font-bold text-indigo-700 uppercase tracking-wider text-[10px] block">Stage 2: Real World Problems & Opportunities</span>
+              <p class="text-slate-600"><strong>Purpose:</strong> Identify the actual headaches people face and where standard options fall short.</p>
+              <div class="space-y-1.5 text-slate-700">
+                <p><strong>• Field 1 (Major Headaches & Bottlenecks):</strong> What specific problem or frustration keeps your target audience stuck?</p>
+                <p class="pl-3 text-slate-500 italic">Example (Tech/Business): "Small businesses get trapped paying $200/month for bloated software that does way more than they need."</p>
+                <p><strong>• Field 2 (Where Current Options Fail):</strong> Why aren't off-the-shelf options fixing this problem?</p>
+                <p class="pl-3 text-slate-500 italic">Example (Sales/Tools): "Standard supplier quotes are slow, static PDFs that don't let contractors tweak options on the fly."</p>
+              </div>
+            </div>
+
+            <!-- Stage 3 Guide -->
+            <div class="bg-white p-3.5 rounded-lg border border-amber-100 space-y-2">
+              <span class="font-bold text-emerald-700 uppercase tracking-wider text-[10px] block">Stage 3: Your Clear Offer</span>
+              <p class="text-slate-600"><strong>Purpose:</strong> Clearly state who you help, what you fix, and how you do it.</p>
+              <div class="space-y-1.5 text-slate-700">
+                <p><strong>• Field 1 (Who You Serve):</strong> Name the exact group of people or businesses you build solutions for.</p>
+                <p class="pl-3 text-slate-500 italic">Example (Community): "Local organization leaders and committee heads planning group service projects or events."</p>
+                <p><strong>• Field 2 (Your Simple Value Statement):</strong> Complete: "I help [Who You Serve] fix [Major Headache] by [Your Unique Solution]."</p>
+                <p class="pl-3 text-slate-500 italic">Example (Value Statement): "I help commercial contractors win more bids by providing rapid, custom scope audits and interactive pricing tools."</p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </details>
 
       <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
         <div class="border-b border-slate-100 pb-3">
           <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Stage 1</span>
-          <h2 class="text-lg font-bold text-slate-900">Internal Discovery & Inventory</h2>
+          <h2 class="text-lg font-bold text-slate-900">Your Strengths & Unique Edge</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-medium text-slate-700 mb-1">Core Skills & Expertise</label>
-            <textarea id="nicheSkills" oninput="saveNicheFramework()" rows="3" placeholder="List core technical and business skills..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+            <label class="block text-xs font-semibold text-slate-800 mb-0.5">Core Skills & Experience</label>
+            <p class="text-[11px] text-slate-500 mb-1.5">List the actual skills, tools, and industry know-how you’ve picked up over the years.</p>
+            <textarea id="nicheSkills" oninput="saveNicheFramework()" rows="3" placeholder="e.g., 15 years in commercial supply, multi-family estimation, reading blueprints, and web tool development..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
           </div>
           <div>
-            <label class="block text-xs font-medium text-slate-700 mb-1">Unique Intersections & Edge Cases</label>
-            <textarea id="nicheIntersections" oninput="saveNicheFramework()" rows="3" placeholder="List unique overlap points (e.g., Estimating + Custom Apps)..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+            <label class="block text-xs font-semibold text-slate-800 mb-0.5">Your Unique Combination</label>
+            <p class="text-[11px] text-slate-500 mb-1.5">Where do two of your strengths cross paths to give you an edge that others don't have?</p>
+            <textarea id="nicheIntersections" oninput="saveNicheFramework()" rows="3" placeholder="e.g., Commercial estimation experience + web app development = Interactive pricing tools for contractors..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
           </div>
         </div>
       </div>
@@ -262,16 +307,18 @@
       <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
         <div class="border-b border-slate-100 pb-3">
           <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Stage 2</span>
-          <h2 class="text-lg font-bold text-slate-900">Market Validation & Demand Testing</h2>
+          <h2 class="text-lg font-bold text-slate-900">Real World Problems & Opportunities</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-medium text-slate-700 mb-1">Target Market Pain Points</label>
-            <textarea id="nichePainPoints" oninput="saveNicheFramework()" rows="3" placeholder="List exact operational bottlenecks..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+            <label class="block text-xs font-semibold text-slate-800 mb-0.5">Major Headaches & Bottlenecks</label>
+            <p class="text-[11px] text-slate-500 mb-1.5">What specific problem, delay, or frustration keeps your target audience stuck?</p>
+            <textarea id="nichePainPoints" oninput="saveNicheFramework()" rows="3" placeholder="e.g., Contractors lose bids because suppliers take days to turn around complex pricing quotes..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
           </div>
           <div>
-            <label class="block text-xs font-medium text-slate-700 mb-1">Competitor Gap Analysis</label>
-            <textarea id="nicheGapAnalysis" oninput="saveNicheFramework()" rows="3" placeholder="Where do existing off-the-shelf tools fail?..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+            <label class="block text-xs font-semibold text-slate-800 mb-0.5">Where Current Options Fail</label>
+            <p class="text-[11px] text-slate-500 mb-1.5">Why aren't existing tools, off-the-shelf software, or standard services fixing this problem?</p>
+            <textarea id="nicheGapAnalysis" oninput="saveNicheFramework()" rows="3" placeholder="e.g., Standard supplier quotes are slow PDFs that don't let contractors tweak options on the fly..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
           </div>
         </div>
       </div>
@@ -279,16 +326,18 @@
       <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
         <div class="border-b border-slate-100 pb-3">
           <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Stage 3</span>
-          <h2 class="text-lg font-bold text-slate-900">Positioning & Minimum Viable Offering</h2>
+          <h2 class="text-lg font-bold text-slate-900">Your Clear Offer</h2>
         </div>
         <div class="space-y-4">
           <div>
-            <label class="block text-xs font-medium text-slate-700 mb-1">Target Audience Statement</label>
-            <input type="text" id="nicheAudience" oninput="saveNicheFramework()" placeholder="e.g., Commercial contractors needing custom CRM tools" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+            <label class="block text-xs font-semibold text-slate-800 mb-0.5">Who You Serve</label>
+            <p class="text-[11px] text-slate-500 mb-1.5">Name the exact group of people or businesses you are building solutions for.</p>
+            <input type="text" id="nicheAudience" oninput="saveNicheFramework()" placeholder="e.g., Commercial multi-family contractors and project managers needing fast, accurate bids" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
           </div>
           <div>
-            <label class="block text-xs font-medium text-slate-700 mb-1">Core Value Proposition Directive</label>
-            <textarea id="nicheValueProp" oninput="saveNicheFramework()" rows="2" placeholder="I help [Target Audience] solve [Pain Point] through [Method]..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+            <label class="block text-xs font-semibold text-slate-800 mb-0.5">Your Simple Value Statement</label>
+            <p class="text-[11px] text-slate-500 mb-1.5">Complete this sentence: "I help [Who You Serve] fix [Major Headache] by [Your Unique Solution]."</p>
+            <textarea id="nicheValueProp" oninput="saveNicheFramework()" rows="2" placeholder="e.g., I help commercial contractors win more bids by providing rapid, custom scope audits and interactive pricing tools..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
           </div>
         </div>
       </div>
@@ -665,3 +714,5 @@
   </script>
 </body>
 </html>
+
+```
