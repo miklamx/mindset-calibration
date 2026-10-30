@@ -12,7 +12,7 @@
     .tab-content.active { display: block; }
     .nav-btn.active { border-bottom: 2px solid #2563eb; color: #2563eb; font-weight: 600; }
     
-    /* Custom scrollbar for help callout boxes */
+    /* Custom scrollbar */
     .scroll-box::-webkit-scrollbar { width: 6px; }
     .scroll-box::-webkit-scrollbar-track { background: #eff6ff; border-radius: 4px; }
     .scroll-box::-webkit-scrollbar-thumb { background: #93c5fd; border-radius: 4px; }
@@ -33,7 +33,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Cool Glow & Pulse UI Effects */
+    /* Glow UI Effects */
     .coach-glow-btn {
       background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
       box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.35);
@@ -122,16 +122,16 @@
     <!-- TAB 1: TALENTS & STRENGTHS -->
     <div id="tab-niche" class="tab-content active space-y-6">
       
-      <!-- COOL UI COACHING BUTTON & EXPANDABLE DRAWER -->
+      <!-- INTERACTIVE GUIDED COACHING DRAWER -->
       <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div class="space-y-1">
             <div class="flex items-center space-x-2">
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/20 text-blue-300 border border-blue-400/30">Guided Reflection</span>
-              <span class="text-xs text-blue-200">Mindfulness & Strength Audit</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/20 text-blue-300 border border-blue-400/30">Interactive Coaching</span>
+              <span class="text-xs text-blue-200">Guided Reflection Wizard</span>
             </div>
             <h2 class="text-xl font-bold tracking-tight">Need help identifying your Superpowers?</h2>
-            <p class="text-xs text-slate-300 max-w-xl">Take 2 minutes to run through a quick guided coaching sequence to uncover your exact skills, edge, and value proposition.</p>
+            <p class="text-xs text-slate-300 max-w-xl">Answer these 3 simple prompts to automatically build your Core Skills, Unique Edge, and Value Statement below.</p>
           </div>
           <button onclick="toggleCoachingDrawer()" class="coach-glow-btn px-5 py-3 rounded-xl font-semibold text-xs flex items-center gap-2 cursor-pointer whitespace-nowrap">
             <span>✨ Start Strengths Coaching</span>
@@ -139,44 +139,58 @@
           </button>
         </div>
 
-        <!-- Hidden Coaching Drawer -->
+        <!-- Interactive Form Drawer -->
         <div id="coaching-drawer" class="expandable-drawer hidden mt-6 pt-6 border-t border-slate-700/80 space-y-6 text-xs text-slate-200">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             
-            <!-- Reflection Step 1 -->
-            <div class="bg-slate-800/70 p-4 rounded-xl border border-slate-700 space-y-2">
-              <span class="text-blue-400 font-bold text-[10px] uppercase tracking-wider block">Question 1 • What comes easy?</span>
-              <p class="font-semibold text-white">"What do people constantly ask for your help with?"</p>
-              <p class="text-slate-400 leading-relaxed">Think about tasks that feel effortless to you but take others hours to figure out (e.g., estimating costs, writing tools, troubleshooting gear).</p>
-              <button onclick="applyCoachSnippet('skills', 'Proven experience with commercial bidding, hands-on mechanical troubleshooting, and building custom web specifiers.')" class="mt-2 inline-block px-2.5 py-1 bg-blue-900/50 hover:bg-blue-800/80 border border-blue-500/30 rounded text-[11px] text-blue-300 transition">
-                + Add sample to Core Skills
-              </button>
+            <!-- Question 1 -->
+            <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/80 space-y-2 flex flex-col justify-between">
+              <div>
+                <span class="text-blue-400 font-bold text-[10px] uppercase tracking-wider block mb-1">Question 1 • Natural Abilities</span>
+                <p class="font-semibold text-white mb-1">"What skills or tasks come easy to you that take others hours to figure out?"</p>
+                <p class="text-[11px] text-slate-400 mb-3">e.g., Estimating costs, reading blueprints, custom software development, mechanical repair.</p>
+              </div>
+              <div>
+                <textarea id="coachQ1" rows="3" oninput="liveUpdateForm()" placeholder="Type your answer here..." class="w-full px-3 py-2 bg-slate-900/90 border border-slate-700 rounded-lg text-xs text-slate-100 placeholder-slate-500 focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+              </div>
             </div>
 
-            <!-- Reflection Step 2 -->
-            <div class="bg-slate-800/70 p-4 rounded-xl border border-slate-700 space-y-2">
-              <span class="text-indigo-400 font-bold text-[10px] uppercase tracking-wider block">Question 2 • Where two worlds cross</span>
-              <p class="font-semibold text-white">"What two skills do you have that rarely live in the same person?"</p>
-              <p class="text-slate-400 leading-relaxed">Combine a traditional trade/field background with a modern technical skill to create an edge nobody else can easily clone.</p>
-              <button onclick="applyCoachSnippet('intersections', 'Combining 15+ years of real-world commercial supply experience with agile software development to build instant decision tools.')" class="mt-2 inline-block px-2.5 py-1 bg-indigo-900/50 hover:bg-indigo-800/80 border border-indigo-500/30 rounded text-[11px] text-indigo-300 transition">
-                + Add sample to Unique Edge
-              </button>
+            <!-- Question 2 -->
+            <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/80 space-y-2 flex flex-col justify-between">
+              <div>
+                <span class="text-indigo-400 font-bold text-[10px] uppercase tracking-wider block mb-1">Question 2 • Skill Intersections</span>
+                <p class="font-semibold text-white mb-1">"What two distinct strengths do you have that rarely live in the same person?"</p>
+                <p class="text-[11px] text-slate-400 mb-3">e.g., Commercial sales background + building custom web tools.</p>
+              </div>
+              <div>
+                <textarea id="coachQ2" rows="3" oninput="liveUpdateForm()" placeholder="Type your answer here..." class="w-full px-3 py-2 bg-slate-900/90 border border-slate-700 rounded-lg text-xs text-slate-100 placeholder-slate-500 focus:ring-2 focus:ring-indigo-500 outline-none"></textarea>
+              </div>
             </div>
 
-            <!-- Reflection Step 3 -->
-            <div class="bg-slate-800/70 p-4 rounded-xl border border-slate-700 space-y-2">
-              <span class="text-emerald-400 font-bold text-[10px] uppercase tracking-wider block">Question 3 • Clear Target</span>
-              <p class="font-semibold text-white">"Who is losing money or time without your combination?"</p>
-              <p class="text-slate-400 leading-relaxed">Identify the specific buyer or decision maker who gets immediate relief from your unique solution.</p>
-              <button onclick="applyCoachSnippet('valueProp', 'I help contractors and multi-family teams eliminate bidding bottlenecks by delivering fast, interactive software tools.')" class="mt-2 inline-block px-2.5 py-1 bg-emerald-900/50 hover:bg-emerald-800/80 border border-emerald-500/30 rounded text-[11px] text-emerald-300 transition">
-                + Add sample to Value Offer
-              </button>
+            <!-- Question 3 -->
+            <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/80 space-y-2 flex flex-col justify-between">
+              <div>
+                <span class="text-emerald-400 font-bold text-[10px] uppercase tracking-wider block mb-1">Question 3 • Target Impact</span>
+                <p class="font-semibold text-white mb-1">"Who loses time or money if they don't have access to your combined skills?"</p>
+                <p class="text-[11px] text-slate-400 mb-3">e.g., Commercial multi-family contractors needing rapid pricing specifiers.</p>
+              </div>
+              <div>
+                <textarea id="coachQ3" rows="3" oninput="liveUpdateForm()" placeholder="Type your answer here..." class="w-full px-3 py-2 bg-slate-900/90 border border-slate-700 rounded-lg text-xs text-slate-100 placeholder-slate-500 focus:ring-2 focus:ring-emerald-500 outline-none"></textarea>
+              </div>
             </div>
 
+          </div>
+
+          <div class="flex justify-between items-center pt-2">
+            <p class="text-[11px] text-slate-400 italic">Your answers live-update the corresponding form fields below as you type.</p>
+            <button onclick="applyCoachingToForm()" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-lg text-xs transition">
+              ✓ Lock Answers & Sync Fields
+            </button>
           </div>
         </div>
       </div>
 
+      <!-- STAGE 1 FORM -->
       <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
         <div class="border-b border-slate-100 pb-3">
           <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Stage 1</span>
@@ -196,6 +210,7 @@
         </div>
       </div>
 
+      <!-- STAGE 2 FORM -->
       <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
         <div class="border-b border-slate-100 pb-3">
           <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Stage 2</span>
@@ -215,6 +230,7 @@
         </div>
       </div>
 
+      <!-- STAGE 3 FORM -->
       <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
         <div class="border-b border-slate-100 pb-3">
           <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Stage 3</span>
@@ -541,21 +557,23 @@
       }
     }
 
-    function applyCoachSnippet(fieldKey, text) {
-      var elemMap = {
-        skills: 'nicheSkills',
-        intersections: 'nicheIntersections',
-        valueProp: 'nicheValueProp'
-      };
-      var targetId = elemMap[fieldKey];
-      if (targetId) {
-        var el = document.getElementById(targetId);
-        if (el) {
-          el.value = el.value ? el.value + '\n\n' + text : text;
-          saveNicheFramework();
-          alert('Sample coaching prompt added to field!');
-        }
-      }
+    // Live update form fields as user types in coaching drawer
+    function liveUpdateForm() {
+      var q1 = document.getElementById('coachQ1').value.trim();
+      var q2 = document.getElementById('coachQ2').value.trim();
+      var q3 = document.getElementById('coachQ3').value.trim();
+
+      if (q1) document.getElementById('nicheSkills').value = q1;
+      if (q2) document.getElementById('nicheIntersections').value = q2;
+      if (q3) document.getElementById('nicheAudience').value = q3;
+
+      saveNicheFramework();
+    }
+
+    function applyCoachingToForm() {
+      liveUpdateForm();
+      toggleCoachingDrawer();
+      alert('Your answers have been transferred and locked into your Talents & Strengths fields!');
     }
 
     // Gentle Oriental Chime Sound Generator (Web Audio API)
