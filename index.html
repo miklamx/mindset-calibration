@@ -120,7 +120,7 @@
     <!-- TAB 1: TALENTS & STRENGTHS -->
     <div id="tab-niche" class="tab-content active space-y-6">
       
-      <!-- COMPLETE STAGES 1-3 INTERACTIVE COACHING DRAWER -->
+      <!-- COMPLETE STAGES 1-3 INTERACTIVE COACHING DRAWER WITH SYSTEM PURPOSE SUMMARY -->
       <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div class="space-y-1">
@@ -140,6 +140,17 @@
         <!-- Interactive Form Drawer with Stage Navigation -->
         <div id="coaching-drawer" class="expandable-drawer hidden mt-6 pt-6 border-t border-slate-700/80 space-y-6 text-xs text-slate-200">
           
+          <!-- PURPOSE OVERVIEW SUMMARY CALLOUT -->
+          <div class="bg-slate-800/90 border border-blue-500/30 rounded-xl p-4 space-y-1.5 shadow-inner">
+            <div class="flex items-center space-x-2">
+              <span class="text-blue-400 font-bold text-[10px] uppercase tracking-wider">System Purpose</span>
+              <span class="text-slate-400 text-[10px]">• Why We Calibrate</span>
+            </div>
+            <p class="text-xs text-slate-200 leading-relaxed">
+              The Mindset Calibration Suite provides a structured operational routine that transforms unfocused energy, daily anxiety, and hesitation into quiet, confident execution. By guiding users through identifying their uncopyable strengths, anchoring their mind around a single daily priority, and logging psychological bottlenecks in real time, the process systematically strips away decision fatigue and self-doubt. Instead of starting the day reacting to incoming noise or feeling overwhelmed by a blank page, users gain total mental clarity, an acute awareness of what holds them back, and a repeatable, data-driven system for consistent high-output performance without burnout.
+            </p>
+          </div>
+
           <!-- Stage Tabs Navigation inside Coaching Drawer -->
           <div class="flex border-b border-slate-700 space-x-2 pb-2">
             <button onclick="switchCoachStage(1)" id="coach-tab-1" class="step-tab active px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-semibold text-slate-300 transition">
