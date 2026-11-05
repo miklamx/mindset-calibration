@@ -71,14 +71,16 @@
     </div>
     <nav class="max-w-6xl mx-auto px-4 flex flex-wrap space-x-4 sm:space-x-8 border-t border-slate-100 text-sm">
       
+      <!-- Tab 1: Playbook -->
       <div class="relative group">
-        <button onclick="showTab('tab-niche')" id="btn-tab-niche" class="nav-btn py-3 active">1. Talents & Strengths</button>
+        <button onclick="showTab('tab-sop')" id="btn-tab-sop" class="nav-btn py-3 active">1. The Playbook</button>
         <div class="pointer-events-none absolute left-0 top-full mt-1 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-200 ease-out z-50 transform -translate-y-1 group-hover:translate-y-0">
-          <p class="font-bold text-blue-300 mb-0.5">(Identify my superpowers)</p>
-          <p class="text-slate-200 leading-snug">Pinpoint your natural talents, core skills, and unique experiences so you can leverage your strengths to solve big problems.</p>
+          <p class="font-bold text-blue-300 mb-0.5">(How do I execute cleanly?)</p>
+          <p class="text-slate-200 leading-snug">System purpose summary and simple operational rules to stay focused and avoid distractions.</p>
         </div>
       </div>
 
+      <!-- Tab 2: Position My Mind -->
       <div class="relative group">
         <button onclick="showTab('tab-calibration')" id="btn-tab-calibration" class="nav-btn py-3 text-slate-500 hover:text-slate-800">2. Position My Mind</button>
         <div class="pointer-events-none absolute left-0 top-full mt-1 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-200 ease-out z-50 transform -translate-y-1 group-hover:translate-y-0">
@@ -87,22 +89,25 @@
         </div>
       </div>
 
+      <!-- Tab 3: Talents & Strengths -->
       <div class="relative group">
-        <button onclick="showTab('tab-audit')" id="btn-tab-audit" class="nav-btn py-3 text-slate-500 hover:text-slate-800">3. Removing Traps</button>
+        <button onclick="showTab('tab-niche')" id="btn-tab-niche" class="nav-btn py-3 text-slate-500 hover:text-slate-800">3. Talents & Strengths</button>
+        <div class="pointer-events-none absolute left-0 top-full mt-1 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-200 ease-out z-50 transform -translate-y-1 group-hover:translate-y-0">
+          <p class="font-bold text-blue-300 mb-0.5">(Identify my superpowers)</p>
+          <p class="text-slate-200 leading-snug">Pinpoint your natural talents, core skills, and unique experiences to solve big problems.</p>
+        </div>
+      </div>
+
+      <!-- Tab 4: Removing Traps -->
+      <div class="relative group">
+        <button onclick="showTab('tab-audit')" id="btn-tab-audit" class="nav-btn py-3 text-slate-500 hover:text-slate-800">4. Removing Traps</button>
         <div class="pointer-events-none absolute left-0 top-full mt-1 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-200 ease-out z-50 transform -translate-y-1 group-hover:translate-y-0">
           <p class="font-bold text-blue-300 mb-0.5">(Where am I getting stuck?)</p>
           <p class="text-slate-200 leading-snug">Catch moments when you hesitate or procrastinate so you can clear the bottleneck.</p>
         </div>
       </div>
 
-      <div class="relative group">
-        <button onclick="showTab('tab-sop')" id="btn-tab-sop" class="nav-btn py-3 text-slate-500 hover:text-slate-800">4. The Playbook</button>
-        <div class="pointer-events-none absolute left-0 top-full mt-1 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-200 ease-out z-50 transform -translate-y-1 group-hover:translate-y-0">
-          <p class="font-bold text-blue-300 mb-0.5">(How do I execute cleanly?)</p>
-          <p class="text-slate-200 leading-snug">Simple rules to help you stay focused, avoid distractions, and work stress-free.</p>
-        </div>
-      </div>
-
+      <!-- Tab 5: Progress & Insights -->
       <div class="relative group">
         <button onclick="showTab('tab-analytics')" id="btn-tab-analytics" class="nav-btn py-3 text-slate-500 hover:text-slate-800">5. Progress & Insights</button>
         <div class="pointer-events-none absolute left-0 top-full mt-1 w-64 p-3 bg-slate-900 text-white text-xs rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-200 ease-out z-50 transform -translate-y-1 group-hover:translate-y-0">
@@ -117,10 +122,173 @@
   <!-- Main Content Area -->
   <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full">
 
-    <!-- TAB 1: TALENTS & STRENGTHS -->
-    <div id="tab-niche" class="tab-content active space-y-6">
+    <!-- TAB 1: THE PLAYBOOK -->
+    <div id="tab-sop" class="tab-content active space-y-6">
       
-      <!-- COMPLETE STAGES 1-3 INTERACTIVE COACHING DRAWER WITH SYSTEM PURPOSE SUMMARY -->
+      <!-- EXECUTIVE SUMMARY CALLOUT AT TOP OF PLAYBOOK -->
+      <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-2xl p-6 text-white shadow-lg space-y-2">
+        <div class="flex items-center space-x-2">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-500/20 text-blue-300 border border-blue-400/30">Executive Summary</span>
+          <span class="text-xs text-blue-200">System Purpose & Core Philosophy</span>
+        </div>
+        <h2 class="text-xl font-bold tracking-tight">The Mindset Calibration Process</h2>
+        <p class="text-xs text-slate-200 leading-relaxed max-w-4xl">
+          The Mindset Calibration Suite provides a structured operational routine that transforms unfocused energy, daily anxiety, and hesitation into quiet, confident execution. By guiding users through identifying their uncopyable strengths, anchoring their mind around a single daily priority, and logging psychological bottlenecks in real time, the process systematically strips away decision fatigue and self-doubt. Instead of starting the day reacting to incoming noise or feeling overwhelmed by a blank page, users gain total mental clarity, an acute awareness of what holds them back, and a repeatable, data-driven system for consistent high-output performance without burnout.
+        </p>
+      </div>
+
+      <details class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-xs text-emerald-900 cursor-pointer">
+        <summary class="font-bold flex justify-between items-center select-none">
+          <span>💡 Quick Guide: How to use The Playbook</span>
+          <span class="text-emerald-600 font-normal flex items-center gap-1">
+            Click to expand / collapse
+            <span class="arrow-icon inline-block text-xs">▼</span>
+          </span>
+        </summary>
+        <div class="accordion-body mt-3 space-y-2 leading-relaxed border-t border-emerald-200 pt-3">
+          <p><strong>Goal:</strong> Simple rules to help you start your day focused, catch distractions early, and finish work without burning out.</p>
+        </div>
+      </details>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6 text-sm leading-relaxed">
+        <h2 class="text-xl font-bold text-slate-900">The Playbook: Your Simple Rules for Staying Focused</h2>
+        
+        <div class="border-l-4 border-blue-600 pl-4 space-y-1.5">
+          <h3 class="font-bold text-slate-900 text-base">Rule 1: Daily Focus Calibration</h3>
+          <p class="text-slate-600"><strong>Where You Start:</strong> Step away from the noise and hold off on email, texts, or social media for just five minutes.</p>
+          <p class="text-slate-600"><strong>How to Do It:</strong> Take three deep breaths, state your daily focus aloud, lock in your single key deliverable for today, and let go of the pressure of the outcome.</p>
+        </div>
+
+        <div class="border-l-4 border-indigo-600 pl-4 space-y-1.5">
+          <h3 class="font-bold text-slate-900 text-base">Rule 2: Spot Your Obstacles</h3>
+          <p class="text-slate-600"><strong>Where You Start:</strong> Keep an eye out for moments when you hesitate, procrastinate, or feel stuck during your work.</p>
+          <p class="text-slate-600"><strong>How to Do It:</strong> Write down what triggered you, how you felt, and what you did instead. Review these notes at the end of the week to see what's holding you back.</p>
+        </div>
+
+        <div class="border-l-4 border-emerald-600 pl-4 space-y-1.5">
+          <h3 class="font-bold text-slate-900 text-base">Rule 3: Clear Your Mind & Reset</h3>
+          <p class="text-slate-600"><strong>Where You Start:</strong> When you finish a major task, meeting, or project.</p>
+          <p class="text-slate-600"><strong>How to Do It:</strong> Take a brief breath to mark the win, pause before jumping into the next thing, and leave the stress behind so you don't carry fatigue into the rest of your day.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: POSITION MY MIND -->
+    <div id="tab-calibration" class="tab-content space-y-6">
+      <details class="bg-blue-50 border border-blue-200 rounded-xl p-4 text-xs text-blue-900 cursor-pointer">
+        <summary class="font-bold flex justify-between items-center select-none">
+          <span>💡 Position My Mind Quick Start</span>
+          <span class="text-blue-600 font-normal flex items-center gap-1">
+            Click to expand / collapse
+            <span class="arrow-icon inline-block text-xs">▼</span>
+          </span>
+        </summary>
+        <div class="accordion-body mt-3 border-t border-blue-200 pt-3">
+          <div class="scroll-box max-h-80 overflow-y-auto pr-2 space-y-3 text-xs leading-relaxed">
+            <p class="font-semibold text-slate-700"><strong>Context:</strong> Before checking email, slack, or answering calls, you open the app to calibrate your focus.</p>
+            <ol class="list-decimal list-inside space-y-2 text-slate-800">
+              <li><strong>Start 5-Minute Timer:</strong> Hit Start (the gentle oriental chime sounds at the 15-second mark to wrap up).</li>
+              <li><strong>Step 1 — Grounding Declaration (60s):</strong> Take three deep breaths and state aloud:</li>
+              <li class="list-none pl-5 italic text-slate-600">"Thank you, thank you, thank you for the clarity, focus, and capability to execute this accurately today."</li>
+              <li><strong>Step 2 — Define Single Core Priority:</strong> You ask yourself what single deliverable makes today a victory and type it into the input box:</li>
+              <li class="list-none pl-5 font-mono bg-white p-1.5 rounded border border-blue-100 text-blue-900">Price $750k commercial water heater scope and verify freight margins for Pinnacle bid</li>
+              <li><strong>Step 3 — Generate Directive:</strong> Click Generate Command Directive and state the output aloud:</li>
+              <li class="list-none pl-5 italic text-slate-600 font-medium">"COMMAND DIRECTIVE: Show me and tell me what I need to know today to execute maximum output on: 'Price $750k commercial water heater scope and verify freight margins for Pinnacle bid'. I operate through clarity and structured execution."</li>
+              <li><strong>Step 4 — Energy Conduit Stance (90s):</strong> Check off Step 3 on the protocol list and reframe: <span class="italic text-slate-600">"I am not carrying the pressure of whether the client signs today—I am simply the structured channel through which accurate pricing flows."</span></li>
+              <li><strong>Step 5 — Journal & Close (60s):</strong> Check off Step 4, state <span class="italic text-slate-600">"My focus is clear, my priorities are set, and I am ready to execute,"</span> and open your bidding software.</li>
+            </ol>
+          </div>
+        </div>
+      </details>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center">
+          <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">5-Minute Timer</span>
+          <div id="timer-display" class="text-5xl font-mono font-bold text-slate-900 my-4">05:00</div>
+          <div class="flex flex-wrap justify-center gap-2">
+            <button onclick="startTimer()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition">Start</button>
+            <button onclick="pauseTimer()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">Pause</button>
+            <button onclick="resetTimer()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">Reset</button>
+            <button onclick="playChime()" class="px-3 py-2 bg-amber-50 hover:bg-amber-100 text-amber-700 rounded-lg text-xs font-medium transition" title="Test oriental chime sound">🔊 Test Chime</button>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm md:col-span-2 space-y-4">
+          <div class="flex justify-between items-center">
+            <h2 class="text-lg font-bold text-slate-900">Command Directive Generator</h2>
+            <button onclick="clearCalibrationInputs()" class="text-xs text-slate-400 hover:text-slate-600 underline">Clear Inputs</button>
+          </div>
+          <p class="text-xs text-slate-500">Formulate active imperative commands for your day's single primary deliverable.</p>
+          <div class="space-y-3">
+            <div>
+              <label class="block text-xs font-medium text-slate-700 mb-1">Single Core Priority</label>
+              <input type="text" id="priorityInput" placeholder="e.g., Price $750k commercial water heater scope and verify freight margins for Pinnacle bid" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+            <button onclick="generateDirective()" class="w-full py-2 bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium rounded-lg transition">Generate Command Directive</button>
+            <div id="directiveOutput" class="p-4 bg-blue-50 border border-blue-200 rounded-lg text-sm text-blue-900 font-medium hidden"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
+        <h2 class="text-lg font-bold text-slate-900">5-Minute Calibration Protocol Checklist</h2>
+        
+        <details class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 cursor-pointer">
+          <summary class="font-semibold text-blue-700 flex justify-between items-center select-none">
+            <span>📋 Protocol Guidelines: What to do during the 5-Minute Timer</span>
+            <span class="text-slate-400 font-normal flex items-center gap-1">
+              Expand / Collapse
+              <span class="arrow-icon inline-block text-xs">▼</span>
+            </span>
+          </summary>
+          <div class="accordion-body mt-2 pt-2 border-t border-slate-200 scroll-box max-h-52 overflow-y-auto pr-1 space-y-2 leading-relaxed">
+            <p><strong>Purpose:</strong> Mental conditioning, alignment, and focus calibration before starting work—not brainstorming or active drafting.</p>
+            <div class="space-y-1.5">
+              <p><strong>• Step 1: Grounding & Anchor (60s)</strong> — Close out distractions, take 3 deep breaths, and repeat gratitude aloud. Ground your nervous system to halt early urgency.</p>
+              <p><strong>• Step 2: Active Directives (90s)</strong> — State your directive clearly to set your mental target. Instruct your mind where to focus attention once the timer ends.</p>
+              <p><strong>• Step 3: Energy Conduit Stance (90s)</strong> — Adopt an observer mindset. Reframe work so you focus strictly on standard execution rather than stressing over immediate outcomes.</p>
+              <p><strong>• Step 4: Journal & Close (60s)</strong> — Log your #1 priority for the day in a few words, state your closing declaration, and transition into active work when the chime sounds.</p>
+            </div>
+          </div>
+        </details>
+
+        <div class="space-y-3 pt-2">
+          <label class="flex items-start space-x-3 cursor-pointer">
+            <input type="checkbox" id="check-1" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
+            <div>
+              <span class="text-sm font-semibold text-slate-800">1. Grounding & Anchor Declaration (60s)</span>
+              <p class="text-xs text-slate-500">Repeat aloud: "Thank you, thank you, thank you for this focus and opportunity." Take 3 deep breaths.</p>
+            </div>
+          </label>
+          <label class="flex items-start space-x-3 cursor-pointer">
+            <input type="checkbox" id="check-2" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
+            <div>
+              <span class="text-sm font-semibold text-slate-800">2. Active Directives (90s)</span>
+              <p class="text-xs text-slate-500">State: "Show me and tell me what I need to know today to make maximum progress on my core priorities."</p>
+            </div>
+          </label>
+          <label class="flex items-start space-x-3 cursor-pointer">
+            <input type="checkbox" id="check-3" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
+            <div>
+              <span class="text-sm font-semibold text-slate-800">3. Energy Conduit Stance (90s)</span>
+              <p class="text-xs text-slate-500">Reframe execution: Execute work through process standards without demanding instant outcomes.</p>
+            </div>
+          </label>
+          <label class="flex items-start space-x-3 cursor-pointer">
+            <input type="checkbox" id="check-4" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
+            <div>
+              <span class="text-sm font-semibold text-slate-800">4. Journal & Close (60s)</span>
+              <p class="text-xs text-slate-500">Log core priority and close with: "My focus is clear, my priorities are set, and I am ready to execute."</p>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: TALENTS & STRENGTHS -->
+    <div id="tab-niche" class="tab-content space-y-6">
+      
+      <!-- STAGES 1-3 INTERACTIVE COACHING DRAWER -->
       <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div class="space-y-1">
@@ -140,17 +308,6 @@
         <!-- Interactive Form Drawer with Stage Navigation -->
         <div id="coaching-drawer" class="expandable-drawer hidden mt-6 pt-6 border-t border-slate-700/80 space-y-6 text-xs text-slate-200">
           
-          <!-- PURPOSE OVERVIEW SUMMARY CALLOUT -->
-          <div class="bg-slate-800/90 border border-blue-500/30 rounded-xl p-4 space-y-1.5 shadow-inner">
-            <div class="flex items-center space-x-2">
-              <span class="text-blue-400 font-bold text-[10px] uppercase tracking-wider">System Purpose</span>
-              <span class="text-slate-400 text-[10px]">• Why We Calibrate</span>
-            </div>
-            <p class="text-xs text-slate-200 leading-relaxed">
-              The Mindset Calibration Suite provides a structured operational routine that transforms unfocused energy, daily anxiety, and hesitation into quiet, confident execution. By guiding users through identifying their uncopyable strengths, anchoring their mind around a single daily priority, and logging psychological bottlenecks in real time, the process systematically strips away decision fatigue and self-doubt. Instead of starting the day reacting to incoming noise or feeling overwhelmed by a blank page, users gain total mental clarity, an acute awareness of what holds them back, and a repeatable, data-driven system for consistent high-output performance without burnout.
-            </p>
-          </div>
-
           <!-- Stage Tabs Navigation inside Coaching Drawer -->
           <div class="flex border-b border-slate-700 space-x-2 pb-2">
             <button onclick="switchCoachStage(1)" id="coach-tab-1" class="step-tab active px-3 py-1.5 rounded-lg border border-slate-700 text-xs font-semibold text-slate-300 transition">
@@ -297,119 +454,7 @@
       </div>
     </div>
 
-    <!-- TAB 2: POSITION MY MIND -->
-    <div id="tab-calibration" class="tab-content space-y-6">
-      <details class="bg-blue-50 border border-blue-200 rounded-xl p-4 text-xs text-blue-900 cursor-pointer">
-        <summary class="font-bold flex justify-between items-center select-none">
-          <span>💡 Position My Mind Quick Start</span>
-          <span class="text-blue-600 font-normal flex items-center gap-1">
-            Click to expand / collapse
-            <span class="arrow-icon inline-block text-xs">▼</span>
-          </span>
-        </summary>
-        <div class="accordion-body mt-3 border-t border-blue-200 pt-3">
-          <div class="scroll-box max-h-80 overflow-y-auto pr-2 space-y-3 text-xs leading-relaxed">
-            <p class="font-semibold text-slate-700"><strong>Context:</strong> Before checking email, slack, or answering calls, you open the app to calibrate your focus.</p>
-            <ol class="list-decimal list-inside space-y-2 text-slate-800">
-              <li><strong>Start 5-Minute Timer:</strong> Hit Start (the gentle oriental chime sounds at the 15-second mark to wrap up).</li>
-              <li><strong>Step 1 — Grounding Declaration (60s):</strong> Take three deep breaths and state aloud:</li>
-              <li class="list-none pl-5 italic text-slate-600">"Thank you, thank you, thank you for the clarity, focus, and capability to execute this accurately today."</li>
-              <li><strong>Step 2 — Define Single Core Priority:</strong> You ask yourself what single deliverable makes today a victory and type it into the input box:</li>
-              <li class="list-none pl-5 font-mono bg-white p-1.5 rounded border border-blue-100 text-blue-900">Price $750k commercial water heater scope and verify freight margins for Pinnacle bid</li>
-              <li><strong>Step 3 — Generate Directive:</strong> Click Generate Command Directive and state the output aloud:</li>
-              <li class="list-none pl-5 italic text-slate-600 font-medium">"COMMAND DIRECTIVE: Show me and tell me what I need to know today to execute maximum output on: 'Price $750k commercial water heater scope and verify freight margins for Pinnacle bid'. I operate through clarity and structured execution."</li>
-              <li><strong>Step 4 — Energy Conduit Stance (90s):</strong> Check off Step 3 on the protocol list and reframe: <span class="italic text-slate-600">"I am not carrying the pressure of whether the client signs today—I am simply the structured channel through which accurate pricing flows."</span></li>
-              <li><strong>Step 5 — Journal & Close (60s):</strong> Check off Step 4, state <span class="italic text-slate-600">"My focus is clear, my priorities are set, and I am ready to execute,"</span> and open your bidding software.</li>
-            </ol>
-          </div>
-        </div>
-      </details>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm flex flex-col items-center justify-center text-center">
-          <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider mb-2">5-Minute Timer</span>
-          <div id="timer-display" class="text-5xl font-mono font-bold text-slate-900 my-4">05:00</div>
-          <div class="flex flex-wrap justify-center gap-2">
-            <button onclick="startTimer()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium transition">Start</button>
-            <button onclick="pauseTimer()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">Pause</button>
-            <button onclick="resetTimer()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-medium transition">Reset</button>
-            <button onclick="playChime()" class="px-3 py-2 bg-amber-50 hover:bg-amber-100 text-amber-700 rounded-lg text-xs font-medium transition" title="Test oriental chime sound">🔊 Test Chime</button>
-          </div>
-        </div>
-
-        <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm md:col-span-2 space-y-4">
-          <div class="flex justify-between items-center">
-            <h2 class="text-lg font-bold text-slate-900">Command Directive Generator</h2>
-            <button onclick="clearCalibrationInputs()" class="text-xs text-slate-400 hover:text-slate-600 underline">Clear Inputs</button>
-          </div>
-          <p class="text-xs text-slate-500">Formulate active imperative commands for your day's single primary deliverable.</p>
-          <div class="space-y-3">
-            <div>
-              <label class="block text-xs font-medium text-slate-700 mb-1">Single Core Priority</label>
-              <input type="text" id="priorityInput" placeholder="e.g., Price $750k commercial water heater scope and verify freight margins for Pinnacle bid" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none">
-            </div>
-            <button onclick="generateDirective()" class="w-full py-2 bg-slate-900 hover:bg-slate-800 text-white text-sm font-medium rounded-lg transition">Generate Command Directive</button>
-            <div id="directiveOutput" class="p-4 bg-blue-50 border border-blue-200 rounded-lg text-sm text-blue-900 font-medium hidden"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4">
-        <h2 class="text-lg font-bold text-slate-900">5-Minute Calibration Protocol Checklist</h2>
-        
-        <details class="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 cursor-pointer">
-          <summary class="font-semibold text-blue-700 flex justify-between items-center select-none">
-            <span>📋 Protocol Guidelines: What to do during the 5-Minute Timer</span>
-            <span class="text-slate-400 font-normal flex items-center gap-1">
-              Expand / Collapse
-              <span class="arrow-icon inline-block text-xs">▼</span>
-            </span>
-          </summary>
-          <div class="accordion-body mt-2 pt-2 border-t border-slate-200 scroll-box max-h-52 overflow-y-auto pr-1 space-y-2 leading-relaxed">
-            <p><strong>Purpose:</strong> Mental conditioning, alignment, and focus calibration before starting work—not brainstorming or active drafting.</p>
-            <div class="space-y-1.5">
-              <p><strong>• Step 1: Grounding & Anchor (60s)</strong> — Close out distractions, take 3 deep breaths, and repeat gratitude aloud. Ground your nervous system to halt early urgency.</p>
-              <p><strong>• Step 2: Active Directives (90s)</strong> — State your directive clearly to set your mental target. Instruct your mind where to focus attention once the timer ends.</p>
-              <p><strong>• Step 3: Energy Conduit Stance (90s)</strong> — Adopt an observer mindset. Reframe work so you focus strictly on standard execution rather than stressing over immediate outcomes.</p>
-              <p><strong>• Step 4: Journal & Close (60s)</strong> — Log your #1 priority for the day in a few words, state your closing declaration, and transition into active work when the chime sounds.</p>
-            </div>
-          </div>
-        </details>
-
-        <div class="space-y-3 pt-2">
-          <label class="flex items-start space-x-3 cursor-pointer">
-            <input type="checkbox" id="check-1" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
-            <div>
-              <span class="text-sm font-semibold text-slate-800">1. Grounding & Anchor Declaration (60s)</span>
-              <p class="text-xs text-slate-500">Repeat aloud: "Thank you, thank you, thank you for this focus and opportunity." Take 3 deep breaths.</p>
-            </div>
-          </label>
-          <label class="flex items-start space-x-3 cursor-pointer">
-            <input type="checkbox" id="check-2" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
-            <div>
-              <span class="text-sm font-semibold text-slate-800">2. Active Directives (90s)</span>
-              <p class="text-xs text-slate-500">State: "Show me and tell me what I need to know today to make maximum progress on my core priorities."</p>
-            </div>
-          </label>
-          <label class="flex items-start space-x-3 cursor-pointer">
-            <input type="checkbox" id="check-3" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
-            <div>
-              <span class="text-sm font-semibold text-slate-800">3. Energy Conduit Stance (90s)</span>
-              <p class="text-xs text-slate-500">Reframe execution: Execute work through process standards without demanding instant outcomes.</p>
-            </div>
-          </label>
-          <label class="flex items-start space-x-3 cursor-pointer">
-            <input type="checkbox" id="check-4" onchange="saveChecklist()" class="mt-1 h-4 w-4 rounded text-blue-600">
-            <div>
-              <span class="text-sm font-semibold text-slate-800">4. Journal & Close (60s)</span>
-              <p class="text-xs text-slate-500">Log core priority and close with: "My focus is clear, my priorities are set, and I am ready to execute."</p>
-            </div>
-          </label>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 3: REMOVING TRAPS -->
+    <!-- TAB 4: REMOVING TRAPS -->
     <div id="tab-audit" class="tab-content space-y-6">
       <details class="bg-indigo-50 border border-indigo-200 rounded-xl p-4 text-xs text-indigo-900 cursor-pointer">
         <summary class="font-bold flex justify-between items-center select-none">
@@ -481,44 +526,6 @@
           </thead>
           <tbody id="auditTableBody" class="divide-y divide-slate-100"></tbody>
         </table>
-      </div>
-    </div>
-
-    <!-- TAB 4: THE PLAYBOOK -->
-    <div id="tab-sop" class="tab-content space-y-6">
-      <details class="bg-emerald-50 border border-emerald-200 rounded-xl p-4 text-xs text-emerald-900 cursor-pointer">
-        <summary class="font-bold flex justify-between items-center select-none">
-          <span>💡 Quick Guide: How to use The Playbook</span>
-          <span class="text-emerald-600 font-normal flex items-center gap-1">
-            Click to expand / collapse
-            <span class="arrow-icon inline-block text-xs">▼</span>
-          </span>
-        </summary>
-        <div class="accordion-body mt-3 space-y-2 leading-relaxed border-t border-emerald-200 pt-3">
-          <p><strong>Goal:</strong> Simple rules to help you start your day focused, catch distractions early, and finish work without burning out.</p>
-        </div>
-      </details>
-
-      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-6 text-sm leading-relaxed">
-        <h2 class="text-xl font-bold text-slate-900">The Playbook: Your Simple Rules for Staying Focused</h2>
-        
-        <div class="border-l-4 border-blue-600 pl-4 space-y-1.5">
-          <h3 class="font-bold text-slate-900 text-base">Rule 1: Daily Focus Calibration</h3>
-          <p class="text-slate-600"><strong>Where You Start:</strong> Step away from the noise and hold off on email, texts, or social media for just five minutes.</p>
-          <p class="text-slate-600"><strong>How to Do It:</strong> Take three deep breaths, state your daily focus aloud, lock in your single key deliverable for today, and let go of the pressure of the outcome.</p>
-        </div>
-
-        <div class="border-l-4 border-indigo-600 pl-4 space-y-1.5">
-          <h3 class="font-bold text-slate-900 text-base">Rule 2: Spot Your Obstacles</h3>
-          <p class="text-slate-600"><strong>Where You Start:</strong> Keep an eye out for moments when you hesitate, procrastinate, or feel stuck during your work.</p>
-          <p class="text-slate-600"><strong>How to Do It:</strong> Write down what triggered you, how you felt, and what you did instead. Review these notes at the end of the week to see what's holding you back.</p>
-        </div>
-
-        <div class="border-l-4 border-emerald-600 pl-4 space-y-1.5">
-          <h3 class="font-bold text-slate-900 text-base">Rule 3: Clear Your Mind & Reset</h3>
-          <p class="text-slate-600"><strong>Where You Start:</strong> When you finish a major task, meeting, or project.</p>
-          <p class="text-slate-600"><strong>How to Do It:</strong> Take a brief breath to mark the win, pause before jumping into the next thing, and leave the stress behind so you don't carry fatigue into the rest of your day.</p>
-        </div>
       </div>
     </div>
 
